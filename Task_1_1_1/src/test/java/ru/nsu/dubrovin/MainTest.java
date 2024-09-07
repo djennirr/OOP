@@ -9,7 +9,7 @@ class MainTest {
     // Первая группа тестов для проверки работоспособности.
 
     @Test
-    void test0EmptyArray() {
+    void Test0EmptyArray() {
         int[] arr = new int[]{};
         Main.heapsort(arr);
         assertArrayEquals(new int[]{}, arr);
