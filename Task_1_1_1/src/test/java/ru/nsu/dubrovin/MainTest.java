@@ -1,6 +1,6 @@
 package ru.nsu.dubrovin;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -61,7 +61,8 @@ class MainTest {
     @Test
     void test7IntBorders() {
         //https://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.2
-        int[] arr = new int[]{2147483647, 2147483647, 2147483646, 0, -2147483647, -2147483648, -2147483648};
+        int[] arr = new int[]{2147483647, 2147483647, 2147483646, 0, -2147483647, -2147483648,
+            -2147483648};
         Main.heapsort(arr);
         assertArrayEquals(new int[]{-2147483648, -2147483648, -2147483647, 0, 2147483646,
             2147483647, 2147483647}, arr);
