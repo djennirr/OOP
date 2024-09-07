@@ -5,6 +5,16 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
+
+    // Первая группа тестов для проверки работоспособности.
+
+    @Test
+    void test0EmptyArray() {
+        int[] arr = {};
+        Main.heapsort(arr);
+        assertArrayEquals(new int[] {}, arr);
+    }
+
     @Test
     void test1SameElements() {
         int[] arr = {0, 0, 0, 0, 0};
@@ -37,7 +47,7 @@ class MainTest {
     void test5Random() {
         int[] arr = {0, 7, 4, 19, 8, 4, 19, 7, 7, 11, 3, 2, 0};
         Main.heapsort(arr);
-        assertArrayEquals(new int[]{0, 0, 2, 3, 4, 4, 7, 7, 7, 8, 11, 19, 19}, arr);
+        assertArrayEquals(new int[] {0, 0, 2, 3, 4, 4, 7, 7, 7, 8, 11, 19, 19}, arr);
     }
 
     @Test

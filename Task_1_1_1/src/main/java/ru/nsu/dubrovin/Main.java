@@ -20,7 +20,7 @@ public class Main {
      *
      * @param i индекс корня
      *
-     * @param n индекс последнего элемента кучи
+     * @param n размер кучи
      */
     private static void heapify(int[] arr, int n, int i) {
         int largest = i;
