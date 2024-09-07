@@ -61,9 +61,9 @@ public class Main {
      *
      * @param arr двоичная куча (хранится как одномерный массив)
      */
-    public static void heapsort(int arr[]) {
+    public static void heapsort(int[] arr) {
         int len = arr.length;
-        for (int i = len / 2 - 1; i >= 0; i--){
+        for (int i = len / 2 - 1; i >= 0; i--) {
             heapify(arr, len, i);
         }
 
