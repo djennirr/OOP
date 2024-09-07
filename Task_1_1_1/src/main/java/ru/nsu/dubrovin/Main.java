@@ -1,14 +1,22 @@
 package ru.nsu.dubrovin;
 
+/**
+ * Основной класс
+ */
 public class Main {
+
+    /**
+     * Главный метод (не используется).
+     * @param args аргументы командной строки
+     */
     public static void main(String[] args) {
     }
 
     /**
-     * Хипизация (превращение в двочинуб кучу) участка массива
-     * @param arr - сам массив
-     * @param i - индекс корня
-     * @param n - индекс последнего элемента кучи
+     * Хипизация (превращение в двочинуб кучу) участка массива.
+     * @param arr сам массив
+     * @param i индекс корня
+     * @param n индекс последнего элемента кучи
      */
     private static void heapify(int[] arr, int n, int i) {
         int largest = i;
@@ -30,10 +38,10 @@ public class Main {
     }
 
     /**
-     * Свапает два элемента массива (меняет местами)
-     * @param arr - сам массив
-     * @param fstind - индекс первого элемента
-     * @param sndind - индекс второго элемента
+     * Свапает два элемента массива (меняет местами).
+     * @param arr сам массив
+     * @param fstind индекс первого элемента
+     * @param sndind индекс второго элемента
      */
     private static void swap(int[] arr, int fstind, int sndind) {
         int tmp = arr[fstind];
@@ -42,8 +50,8 @@ public class Main {
     }
 
     /**
-     * Сортировка двоичной кучей
-     * @param arr - двоичная куча (хранится как одномерный массив)
+     * Сортировка двоичной кучей.
+     * @param arr двоичная куча (хранится как одномерный массив)
      */
     public static void heapsort(int arr[]) {
         int len = arr.length;
