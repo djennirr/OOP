@@ -1,0 +1,2 @@
+javac -cp "junit-code-platform-standalone-1.11.0.jar" ../main/java/ru/nsu/dubrovin/Main.java ../test/java/ru/nsu/dubrovin/MainTest.java -d "."
+java -jar junit-platform-console-standalone-1.11.0.jar execute -p ru.nsu.dubrovin -cp ru/nsu/dubrovin -cp . --select-class ru.nsu.dubrovin.MainTest --reports-dir='reports'
