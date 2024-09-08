@@ -21,8 +21,11 @@ public class Main {
      * @param i индекс корня
      *
      * @param n размер кучи
+     *
+     * @param depth используется для подсчета глубины рекурсии для док-ва времени работы
+     * Передается как массив для удобства возвращения, имеет одну ячейку
      */
-    private static void heapify(int[] arr, int n, int i) {
+    private static int heapify(int[] arr, int n, int i, int[] depth) {
         int largest = i;
         int left = i * 2 + 1;
         int right = i * 2 + 2;
@@ -37,8 +40,11 @@ public class Main {
 
         if (largest != i) {
             swap(arr, i, largest);
-            heapify(arr, n, largest);
+            depth[0] += 1;
+            heapify(arr, n, largest, depth);
         }
+
+        return depth[0];
     }
 
     /**
@@ -61,15 +67,18 @@ public class Main {
      *
      * @param arr двоичная куча (хранится как одномерный массив)
      */
-    public static void heapsort(int[] arr) {
+    public static int heapsort(int[] arr) {
         int len = arr.length;
+        int iterations = 0;
         for (int i = len / 2 - 1; i >= 0; i--) {
-            heapify(arr, len, i);
+            iterations += heapify(arr, len, i, new int[]{1});
         }
 
         for (int i = len - 1; i >= 0; i--) {
             swap(arr, 0, i);
-            heapify(arr, i, 0);
+            iterations += heapify(arr, i, 0, new int[]{1});
         }
+
+        return iterations;
     }
 }
