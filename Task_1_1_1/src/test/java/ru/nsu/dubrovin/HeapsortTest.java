@@ -84,34 +84,34 @@ class HeapsortTest {
 
         int[] arr1 = new int[100];
         fill(arr1);
-        System.out.println("Кол-во операций для " + arr1.length + " элем: " +
-            Heapsort.heapsort(arr1));
+        System.out.println("Кол-во операций для " + arr1.length + " элем: "
+            + Heapsort.heapsort(arr1));
 
         int[] arr2 = new int[200];
         fill(arr2);
-        System.out.println("Кол-во операций для " + arr2.length + " элем: " +
-            Heapsort.heapsort(arr2));
+        System.out.println("Кол-во операций для " + arr2.length + " элем: "
+            + Heapsort.heapsort(arr2));
 
         int[] arr3 = new int[300];
         fill(arr3);
-        System.out.println("Кол-во операций для " + arr3.length + " элем: " +
-            Heapsort.heapsort(arr3));
+        System.out.println("Кол-во операций для " + arr3.length + " элем: "
+            + Heapsort.heapsort(arr3));
 
         int[] arr4 = new int[400];
         fill(arr4);
-        System.out.println("Кол-во операций для " + arr4.length + " элем: " +
-            Heapsort.heapsort(arr4));
+        System.out.println("Кол-во операций для " + arr4.length + " элем: "
+            + Heapsort.heapsort(arr4));
 
         int[] arr5 = new int[500];
         fill(arr5);
-        System.out.println("Кол-во операций для " + arr5.length + " элем: " +
-            Heapsort.heapsort(arr5));
+        System.out.println("Кол-во операций для " + arr5.length + " элем: "
+            + Heapsort.heapsort(arr5));
         System.out.println("График - https://www.desmos.com/calculator/3ujfopftsu?lang=ru");
     }
 
     void fill(int[] arr) {
         int len = arr.length;
-        for (int i = 0; i < len; i++){
+        for (int i = 0; i < len; i++) {
             arr[i] = i;
         }
     }
