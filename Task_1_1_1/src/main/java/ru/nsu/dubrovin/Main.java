@@ -23,7 +23,8 @@ public class Main {
      * @param n размер кучи
      *
      * @param depth используется для подсчета глубины рекурсии для док-ва времени работы
-     * Передается как массив для удобства возвращения, имеет одну ячейку
+     *
+     * @return глубина рекурсии
      */
     private static int heapify(int[] arr, int n, int i, int[] depth) {
         int largest = i;
@@ -66,6 +67,8 @@ public class Main {
      * Сортировка двоичной кучей.
      *
      * @param arr двоичная куча (хранится как одномерный массив)
+     *
+     * @return количество итераций
      */
     public static int heapsort(int[] arr) {
         int len = arr.length;
