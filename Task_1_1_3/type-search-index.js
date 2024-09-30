@@ -1,1 +1,1 @@
-typeSearchIndex = [{"p":"ru.nsu.dubrovin","l":"Add"},{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.dubrovin","l":"Expression"},{"p":"ru.nsu.dubrovin","l":"Main"},{"p":"ru.nsu.dubrovin","l":"Number"},{"p":"ru.nsu.dubrovin","l":"Variable"}]
+typeSearchIndex = [{"p":"ru.nsu.dubrovin","l":"Add"},{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.dubrovin","l":"Expression"},{"p":"ru.nsu.dubrovin","l":"Main"},{"p":"ru.nsu.dubrovin","l":"Number"},{"p":"ru.nsu.dubrovin","l":"Sub"},{"p":"ru.nsu.dubrovin","l":"Variable"}]
