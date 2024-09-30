@@ -5,6 +5,7 @@ import java.util.HashMap;
 public abstract class Expression {
     public abstract double eval(HashMap<String, Double> evaluation);
 
+    //Потом заюзать при выводе
     public abstract String toString();
 
     //Получаем хэшмапу название - значение из строки

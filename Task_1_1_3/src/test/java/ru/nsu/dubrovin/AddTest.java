@@ -12,8 +12,8 @@ class AddTest {
     @Test
     void testEvaluate() {
         assertEquals(111, firstSum.evaluate(""));
-        assertEquals(111, firstSum.evaluate("y = 69"));
-        assertEquals(111, firstSum.evaluate("x = 42; y = 69"));
+        assertEquals(111, secondSum.evaluate("y = 69"));
+        assertEquals(111, thirdSum.evaluate("x = 42; y = 69"));
     }
 
     @Test
