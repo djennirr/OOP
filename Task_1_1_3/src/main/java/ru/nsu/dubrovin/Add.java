@@ -6,7 +6,7 @@ public class Add extends Expression{
     private Expression firstArg;
     private Expression secondArg;
 
-    public Add(Expression left, Expression right) {
+    public Add(Expression firstArg, Expression secondArg) {
         this.firstArg = firstArg;
         this.secondArg = secondArg;
     }
