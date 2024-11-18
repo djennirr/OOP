@@ -28,20 +28,9 @@ public class SubstringSearch {
      * @throws IOException exception can occur while searching for substring.
      *
      */
-    public static ArrayList<Integer> find(String fileName, String subString) throws IOException {
-        ArrayList<Integer> ret = new ArrayList<>();
-        Reader reader;
-        try {
-            reader = new FileReader(fileName);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        try {
-            ret = readerSearchForSubstring(reader, subString);
-            return ret;
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public static ArrayList<Long> find(String fileName, String subString) throws IOException {
+        Reader reader = new FileReader(fileName);
+        return readerSearchForSubstring(reader, subString);
     }
 
     /**
@@ -56,21 +45,18 @@ public class SubstringSearch {
      * @throws IOException exception can occur while searching for substring.
      *
      */
-    public static ArrayList<Integer> readerSearchForSubstring(Reader reader, String subString)
+    public static ArrayList<Long> readerSearchForSubstring(Reader reader, String subString)
             throws IOException {
-        ArrayList<Integer> indices = new ArrayList<>();
-        int indice = 0;
+        ArrayList<Long> indices = new ArrayList<>();
+        long indice = 0;
         char c;
         int numc;
         int buffsize = subString.length();
         CircularBuffer buffer = new CircularBuffer(buffsize);
 
         for (int i = 0; i < buffsize; i++) {
-            try {
-                numc = reader.read();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+            numc = reader.read();
+
             if (numc == -1) {
                 return indices;
             }
@@ -109,7 +95,7 @@ public class SubstringSearch {
      * @throws IOException can occur while searching for substring.
      *
      */
-    public static ArrayList<Integer> searchForSubstring(String searchString, String subString)
+    public static ArrayList<Long> searchForSubstring(String searchString, String subString)
             throws IOException {
         Reader reader = new StringReader(searchString);
         return readerSearchForSubstring(reader, subString);

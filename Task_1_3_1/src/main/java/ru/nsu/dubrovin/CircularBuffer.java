@@ -34,6 +34,7 @@ public class CircularBuffer {
      *
      * @return string.
      */
+    @Override
     public String toString() {
         char[] temp = new char[capacity];
         for (int i = 0; i < capacity; i++) {
