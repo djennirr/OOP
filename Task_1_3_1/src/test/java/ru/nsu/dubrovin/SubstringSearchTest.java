@@ -61,16 +61,15 @@ class SubstringSearchTest {
     @Test
     void test6File() throws IOException {
         File file = new File("test.txt");
-        file.createNewFile();
         FileWriter fileWriter = new FileWriter(file);
-
-        fileWriter.append("There is some text ahaha");
+        file.createNewFile();
+        fileWriter.write("There is some text ahaha");
 
         ArrayList<Long> list = new ArrayList<Long>();
         list.add((long) 20);
         list.add((long) 22);
 
-        assertEquals(list, SubstringSearch.find("test.txt", "ha"));
+        assertEquals(list, SubstringSearch.find(file, "ha"));
 
     }
 
