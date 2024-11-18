@@ -1,6 +1,10 @@
 package ru.nsu.dubrovin;
 
-import java.io.*;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -14,10 +18,15 @@ public class SubstringSearch {
 
     /**
      * Searching for substring in file.
+     *
      * @param fileName file in which we are searching.
+     *
      * @param subString substring to search.
+     *
      * @return arraylist of indices.
+     *
      * @throws IOException exception can occur while searching for substring.
+     *
      */
     public static ArrayList<Integer> find(String fileName, String subString) throws IOException {
         ArrayList<Integer> ret = new ArrayList<>();
@@ -37,13 +46,18 @@ public class SubstringSearch {
 
     /**
      * Searching for substring in reader.
+     *
      * @param reader reader in which we are searching.
+     *
      * @param subString substring to search.
+     *
      * @return arraylist of indices.
+     *
      * @throws IOException exception can occur while searching for substring.
+     *
      */
-    public static ArrayList<Integer> readerSearchForSubstring(Reader reader, String subString) throws IOException
-    {
+    public static ArrayList<Integer> readerSearchForSubstring(Reader reader, String subString)
+            throws IOException {
         ArrayList<Integer> indices = new ArrayList<>();
         int indice = 0;
         char c;
@@ -51,7 +65,7 @@ public class SubstringSearch {
         int buffsize = subString.length();
         CircularBuffer buffer = new CircularBuffer(buffsize);
 
-        for (int i = 0; i < buffsize; i++){
+        for (int i = 0; i < buffsize; i++) {
             try {
                 numc = reader.read();
             } catch (IOException e) {
@@ -69,7 +83,7 @@ public class SubstringSearch {
         }
         indice++;
 
-        while ((numc = reader.read()) != -1){
+        while ((numc = reader.read()) != -1) {
             c = (char) numc;
             buffer.add(c);
 
@@ -85,10 +99,15 @@ public class SubstringSearch {
 
     /**
      * Searching for substring in string.
+     *
      * @param searchString string in which we are searching.
+     *
      * @param subString substring to search.
+     *
      * @return arraylist of indices.
+     *
      * @throws IOException can occur while searching for substring.
+     *
      */
     public static ArrayList<Integer> searchForSubstring(String searchString, String subString)
             throws IOException {
