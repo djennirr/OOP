@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
 import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
@@ -61,19 +60,21 @@ class SubstringSearchTest {
     @Test
     void test6File() throws IOException {
         File file = new File("test.txt");
-        FileWriter fileWriter = new FileWriter(file);
         file.createNewFile();
-        fileWriter.write("There is some text ahaha");
+        FileWriter fileWriter = new FileWriter(file);
+
+        fileWriter.append("There is some text ahaha");
+
 
         ArrayList<Long> list = new ArrayList<Long>();
         list.add((long) 20);
         list.add((long) 22);
 
-        assertEquals(list, SubstringSearch.find(file, "ha"));
+        assertEquals(list, SubstringSearch.find("test.txt", "ha"));
 
     }
 
-    /*@Test
+    @Test
     void test7File() throws IOException {
         File file = new File("test.txt");
         file.createNewFile();
@@ -84,6 +85,7 @@ class SubstringSearchTest {
         }
 
         fileWriter.append("*");
+        fileWriter.close();
 
         ArrayList<Long> list = new ArrayList<Long>();
         boolean add = list.add((long) 1073741824 * (long) 16);
@@ -91,5 +93,5 @@ class SubstringSearchTest {
         assertEquals(list, SubstringSearch.find("test.txt", "*"));
 
         file.delete();
-    }*/
+    }
 }

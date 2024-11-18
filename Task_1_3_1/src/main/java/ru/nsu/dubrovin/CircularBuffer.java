@@ -41,7 +41,6 @@ public class CircularBuffer {
             temp[i] = buffer[(ptr + i) % capacity];
         }
         String ret = new String(temp);
-        System.out.println(ret);
         return ret;
     }
 }

@@ -1,6 +1,9 @@
 package ru.nsu.dubrovin;
 
-import java.io.*;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -24,7 +27,7 @@ public class SubstringSearch {
      * @throws IOException exception can occur while searching for substring.
      *
      */
-    public static ArrayList<Long> find(File fileName, String subString) throws IOException {
+    public static ArrayList<Long> find(String fileName, String subString) throws IOException {
         Reader reader = new FileReader(fileName);
         return readerSearchForSubstring(reader, subString);
     }
