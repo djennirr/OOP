@@ -19,11 +19,11 @@ public class CircularBuffer {
     }
 
     public String toString(){
-        Character[] temp = new Character[capacity];
+        char[] temp = new char[capacity];
         for (int i = 0; i < capacity; i++){
             temp[i] = buffer[(ptr + i) % capacity];
         }
-        String ret = Arrays.toString(temp);
+        String ret = new String(temp);
         return ret;
     }
 }
