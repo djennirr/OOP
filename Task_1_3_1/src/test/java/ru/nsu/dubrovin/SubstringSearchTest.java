@@ -64,7 +64,7 @@ class SubstringSearchTest {
         FileWriter fileWriter = new FileWriter(file);
 
         fileWriter.append("There is some text ahaha");
-
+        fileWriter.close();
 
         ArrayList<Long> list = new ArrayList<Long>();
         list.add((long) 20);
@@ -72,10 +72,32 @@ class SubstringSearchTest {
 
         assertEquals(list, SubstringSearch.find("test.txt", "ha"));
 
+        file.delete();
     }
 
     @Test
     void test7File() throws IOException {
+        File file = new File("test.txt");
+        file.createNewFile();
+        FileWriter fileWriter = new FileWriter(file);
+
+        for (int i = 0; i < 10; i++) {
+            fileWriter.append("16characterline ");
+        }
+
+        fileWriter.append("*");
+        fileWriter.close();
+
+        ArrayList<Long> list = new ArrayList<Long>();
+        boolean add = list.add((long) 10 * (long) 16);
+
+        assertEquals(list, SubstringSearch.find("test.txt", "*"));
+
+        file.delete();
+    }
+
+    @Test
+    void test8FileExtreme() throws IOException {
         File file = new File("test.txt");
         file.createNewFile();
         FileWriter fileWriter = new FileWriter(file);

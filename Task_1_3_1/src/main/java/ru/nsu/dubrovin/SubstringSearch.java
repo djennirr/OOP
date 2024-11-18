@@ -1,6 +1,8 @@
 package ru.nsu.dubrovin;
 
-import java.io.FileReader;
+
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
@@ -28,7 +30,7 @@ public class SubstringSearch {
      *
      */
     public static ArrayList<Long> find(String fileName, String subString) throws IOException {
-        Reader reader = new FileReader(fileName);
+        Reader reader = new InputStreamReader(new FileInputStream(fileName));
         return readerSearchForSubstring(reader, subString);
     }
 
