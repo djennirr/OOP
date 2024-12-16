@@ -13,7 +13,7 @@ public abstract class Expression {
      *
      * @return evaluated expression.
      *
-     * @throws Exception sometimes ve cannot evaluate.
+     * @throws Exception sometimes we cannot evaluate.
      */
     public abstract double eval (HashMap<String, Double> evaluation) throws Exception;
 

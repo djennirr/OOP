@@ -85,28 +85,34 @@ public class Parser {
                     break;
 
                 case '+':
-                    if (unclosed == 0){
+                    if (unclosed == 0) {
                         return new Add(parseExpr(toParse.substring(0, i)),
                                 parseExpr(toParse.substring(i + 1)));
                     }
+                    break;
 
                 case '-':
-                    if (unclosed == 0){
+                    if (unclosed == 0) {
                         return new Sub(parseExpr(toParse.substring(0, i)),
                                 parseExpr(toParse.substring(i + 1)));
                     }
+                    break;
 
                 case '*':
-                    if (unclosed == 0){
+                    if (unclosed == 0) {
                         return new Mul(parseExpr(toParse.substring(0, i)),
                                 parseExpr(toParse.substring(i + 1)));
                     }
+                    break;
 
                 case '/':
-                    if (unclosed == 0){
+                    if (unclosed == 0) {
                         return new Div(parseExpr(toParse.substring(0, i)),
                                 parseExpr(toParse.substring(i + 1)));
                     }
+                    break;
+
+                default:
             }
         }
 
