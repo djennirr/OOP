@@ -3,8 +3,8 @@ package ru.nsu.dubrovin;
 import java.util.HashMap;
 
 public class Mul extends Expression{
-    private Expression firstArg;
-    private Expression secondArg;
+    private final Expression firstArg;
+    private final Expression secondArg;
 
     public Mul(Expression firstArg, Expression secondArg) {
         this.firstArg = firstArg;
@@ -12,7 +12,7 @@ public class Mul extends Expression{
     }
 
     @Override
-    public double eval(HashMap<String, Double> evaluation) {
+    public double eval(HashMap<String, Double> evaluation) throws Exception {
         return firstArg.eval(evaluation) * secondArg.eval(evaluation);
     }
 

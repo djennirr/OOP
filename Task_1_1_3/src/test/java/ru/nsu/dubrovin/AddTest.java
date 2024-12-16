@@ -10,14 +10,14 @@ class AddTest {
     Add thirdSum = new Add(new Variable("x"), new Variable("y"));
 
     @Test
-    void testEvaluate() {
+    void testEvaluate() throws Exception {
         assertEquals(111, firstSum.evaluate(""));
         assertEquals(111, secondSum.evaluate("y = 69"));
         assertEquals(111, thirdSum.evaluate("x = 42; y = 69"));
     }
 
     @Test
-    void derivative() {
+    void derivative() throws Exception {
         assertEquals(0, firstSum.derivative("x").evaluate(""));
         assertEquals(1, secondSum.derivative("y").evaluate(""));
         assertEquals(0, secondSum.derivative("x").evaluate(""));

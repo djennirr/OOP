@@ -8,12 +8,12 @@ class VariableTest {
     Variable variable = new Variable("myIQ");
 
     @Test
-    void testEvaluate() {
+    void testEvaluate() throws Exception {
         assertEquals(10, variable.evaluate("stenenkoIQ = 1000; myIQ = 10"));
     }
 
     @Test
-    void testDerivative() {
+    void testDerivative() throws Exception {
         assertEquals(1, variable.derivative("myIQ").evaluate(""));
         assertEquals(0, variable.derivative("stenenkoIQ").evaluate(""));
     }

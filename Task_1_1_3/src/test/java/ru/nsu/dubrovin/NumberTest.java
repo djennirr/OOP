@@ -8,12 +8,12 @@ class NumberTest {
     Number number = new Number(123);
 
     @Test
-    void testEvaluate() {
+    void testEvaluate() throws Exception {
         assertEquals(123, number.evaluate(""));
     }
 
     @Test
-    void testDerivative() {
+    void testDerivative() throws Exception {
         assertEquals(0, number.derivative("").evaluate("x = 123"));
     }
 

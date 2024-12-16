@@ -10,14 +10,14 @@ class SubTest {
     Sub thirdDiff = new Sub(new Variable("x"), new Variable("y"));
 
     @Test
-    void testEvaluate() {
+    void testEvaluate() throws Exception {
         assertEquals(-27, firstDiff.evaluate(""));
         assertEquals(-27, secondDiff.evaluate("y = 69"));
         assertEquals(-27, thirdDiff.evaluate("x = 42; y = 69"));
     }
 
     @Test
-    void derivative() {
+    void derivative() throws Exception {
         assertEquals(0, firstDiff.derivative("x").evaluate(""));
         assertEquals(1, secondDiff.derivative("y").evaluate(""));
         assertEquals(0, secondDiff.derivative("x").evaluate(""));

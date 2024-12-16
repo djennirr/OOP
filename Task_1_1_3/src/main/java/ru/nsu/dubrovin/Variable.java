@@ -15,7 +15,10 @@ public class Variable extends Expression{
     }
 
     @Override
-    public double eval(HashMap<String, Double> evaluation) {
+    public double eval(HashMap<String, Double> evaluation) throws Exception {
+        if (evaluation.get(name) == null) {
+            throw new Exception("Cannot evaluate");
+        }
         return evaluation.get(name);
     }
 

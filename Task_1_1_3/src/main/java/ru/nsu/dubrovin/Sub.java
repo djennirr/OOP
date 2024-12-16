@@ -12,7 +12,7 @@ public class Sub extends Expression{
     }
 
     @Override
-    public double eval(HashMap<String, Double> evaluation) {
+    public double eval(HashMap<String, Double> evaluation) throws Exception {
         return firstArg.eval(evaluation) - secondArg.eval(evaluation);
     }
 
