@@ -137,6 +137,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">Sub</span>
 extends <a href="Expression.html" title="class in ru.nsu.dubrovin">Expression</a></pre>
+<div class="block">Class for sub.</div>
 </li>
 </ul>
 </div>
@@ -159,7 +160,9 @@ extends <a href="Expression.html" title="class in ru.nsu.dubrovin">Expression</a
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(ru.nsu.dubrovin.Expression,ru.nsu.dubrovin.Expression)">Sub</a></span>&#8203;(<a href="Expression.html" title="class in ru.nsu.dubrovin">Expression</a>&nbsp;firstArg,
    <a href="Expression.html" title="class in ru.nsu.dubrovin">Expression</a>&nbsp;secondArg)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructor.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -239,6 +242,12 @@ extends <a href="Expression.html" title="class in ru.nsu.dubrovin">Expression</a
 <h4>Sub</h4>
 <pre>public&nbsp;Sub&#8203;(<a href="Expression.html" title="class in ru.nsu.dubrovin">Expression</a>&nbsp;firstArg,
            <a href="Expression.html" title="class in ru.nsu.dubrovin">Expression</a>&nbsp;secondArg)</pre>
+<div class="block">Constructor.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>firstArg</code> - first argument of mul.</dd>
+<dd><code>secondArg</code> - second argument of mul.</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -259,7 +268,6 @@ extends <a href="Expression.html" title="class in ru.nsu.dubrovin">Expression</a
 <h4>eval</h4>
 <pre class="methodSignature">public&nbsp;double&nbsp;eval&#8203;(java.util.HashMap&lt;java.lang.String,&#8203;java.lang.Double&gt;&nbsp;evaluation)
             throws java.lang.Exception</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="Expression.html#eval(java.util.HashMap)">Expression</a></code></span></div>
 <div class="block">Evaluates expression by hashmap.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -269,7 +277,7 @@ extends <a href="Expression.html" title="class in ru.nsu.dubrovin">Expression</a
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>evaluated expression.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.Exception</code> - sometimes ve cannot evaluate.</dd>
+<dd><code>java.lang.Exception</code> - sometimes we cannot evaluate.</dd>
 </dl>
 </li>
 </ul>
@@ -280,7 +288,6 @@ extends <a href="Expression.html" title="class in ru.nsu.dubrovin">Expression</a
 <li class="blockList">
 <h4>toString</h4>
 <pre class="methodSignature">public&nbsp;java.lang.String&nbsp;toString()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="Expression.html#toString()">Expression</a></code></span></div>
 <div class="block">Converts expr to string.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -297,7 +304,6 @@ extends <a href="Expression.html" title="class in ru.nsu.dubrovin">Expression</a
 <li class="blockList">
 <h4>derivative</h4>
 <pre class="methodSignature">public&nbsp;<a href="Expression.html" title="class in ru.nsu.dubrovin">Expression</a>&nbsp;derivative&#8203;(java.lang.String&nbsp;variable)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="Expression.html#derivative(java.lang.String)">Expression</a></code></span></div>
 <div class="block">Counts derivative for expression.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
