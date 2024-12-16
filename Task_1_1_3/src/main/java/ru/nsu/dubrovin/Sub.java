@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * Class for sub.
  */
-public class Sub extends Expression{
+public class Sub extends Expression {
     private Expression firstArg;
     private Expression secondArg;
 

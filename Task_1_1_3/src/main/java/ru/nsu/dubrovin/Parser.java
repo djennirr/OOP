@@ -58,6 +58,10 @@ public class Parser {
             }
         }
 
+        if (!openStack.empty()) {
+            throw new Exception("Inappropriate brackets sequence");
+        }
+
         int toDelete = 0;
         for (int i = 0; i < len; i++) {
             if ((ptrs[i] == len - 1 - i) && (i < len - 1 - i)) {

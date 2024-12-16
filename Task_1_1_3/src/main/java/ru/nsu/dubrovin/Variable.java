@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * Class for variable.
  */
-public class Variable extends Expression{
+public class Variable extends Expression {
     private String name;
 
     /**

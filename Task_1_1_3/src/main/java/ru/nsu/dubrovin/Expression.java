@@ -70,7 +70,7 @@ public abstract class Expression {
     /**
      * Method for printing expression.
      */
-    public void print(){
+    public void print() {
         System.out.println(this.toString());
     }
 }

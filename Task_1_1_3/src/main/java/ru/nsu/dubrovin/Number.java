@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * Class for Number.
  */
-public class Number extends Expression{
+public class Number extends Expression {
     private int value;
 
     /**
@@ -13,7 +13,7 @@ public class Number extends Expression{
      *
      * @param value value of the number.
      */
-    public Number(int value){
+    public Number(int value) {
         this.value = value;
     }
 

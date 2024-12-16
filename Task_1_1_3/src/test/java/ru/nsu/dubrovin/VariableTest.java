@@ -1,6 +1,7 @@
 package ru.nsu.dubrovin;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,6 +11,8 @@ class VariableTest {
     @Test
     void testEvaluate() throws Exception {
         assertEquals(10, variable.evaluate("stenenkoIQ = 1000; myIQ = 10"));
+        Exception e = assertThrows(Exception.class, () -> variable.evaluate(""));
+        assertEquals("Cannot evaluate", e.getMessage());
     }
 
     @Test

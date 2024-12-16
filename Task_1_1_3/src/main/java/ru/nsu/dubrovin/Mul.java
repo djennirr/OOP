@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * Class for mul.
  */
-public class Mul extends Expression{
+public class Mul extends Expression {
     private final Expression firstArg;
     private final Expression secondArg;
 
