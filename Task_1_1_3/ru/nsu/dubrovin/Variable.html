@@ -181,17 +181,23 @@ extends <a href="Expression.html" title="class in ru.nsu.dubrovin">Expression</a
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="Expression.html" title="class in ru.nsu.dubrovin">Expression</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#derivative(java.lang.String)">derivative</a></span>&#8203;(java.lang.String&nbsp;variable)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Counts derivative for expression.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#eval(java.util.HashMap)">eval</a></span>&#8203;(java.util.HashMap&lt;java.lang.String,&#8203;java.lang.Double&gt;&nbsp;evaluation)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Evaluates expression by hashmap.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Converts expr to string.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -250,9 +256,13 @@ extends <a href="Expression.html" title="class in ru.nsu.dubrovin">Expression</a
 <li class="blockList">
 <h4>toString</h4>
 <pre class="methodSignature">public&nbsp;java.lang.String&nbsp;toString()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="Expression.html#toString()">Expression</a></code></span></div>
+<div class="block">Converts expr to string.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Expression.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="Expression.html" title="class in ru.nsu.dubrovin">Expression</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>string representation of expression.</dd>
 </dl>
 </li>
 </ul>
@@ -262,10 +272,19 @@ extends <a href="Expression.html" title="class in ru.nsu.dubrovin">Expression</a
 <ul class="blockList">
 <li class="blockList">
 <h4>eval</h4>
-<pre class="methodSignature">public&nbsp;double&nbsp;eval&#8203;(java.util.HashMap&lt;java.lang.String,&#8203;java.lang.Double&gt;&nbsp;evaluation)</pre>
+<pre class="methodSignature">public&nbsp;double&nbsp;eval&#8203;(java.util.HashMap&lt;java.lang.String,&#8203;java.lang.Double&gt;&nbsp;evaluation)
+            throws java.lang.Exception</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="Expression.html#eval(java.util.HashMap)">Expression</a></code></span></div>
+<div class="block">Evaluates expression by hashmap.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Expression.html#eval(java.util.HashMap)">eval</a></code>&nbsp;in class&nbsp;<code><a href="Expression.html" title="class in ru.nsu.dubrovin">Expression</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>evaluation</code> - hashmap for evaluation.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>evaluated expression.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.Exception</code> - sometimes ve cannot evaluate.</dd>
 </dl>
 </li>
 </ul>
@@ -276,9 +295,15 @@ extends <a href="Expression.html" title="class in ru.nsu.dubrovin">Expression</a
 <li class="blockList">
 <h4>derivative</h4>
 <pre class="methodSignature">public&nbsp;<a href="Expression.html" title="class in ru.nsu.dubrovin">Expression</a>&nbsp;derivative&#8203;(java.lang.String&nbsp;variable)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="Expression.html#derivative(java.lang.String)">Expression</a></code></span></div>
+<div class="block">Counts derivative for expression.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Expression.html#derivative(java.lang.String)">derivative</a></code>&nbsp;in class&nbsp;<code><a href="Expression.html" title="class in ru.nsu.dubrovin">Expression</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>variable</code> - variable to derivate.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>derivative.</dd>
 </dl>
 </li>
 </ul>
