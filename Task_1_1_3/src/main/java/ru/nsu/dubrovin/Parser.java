@@ -3,8 +3,21 @@ package ru.nsu.dubrovin;
 import java.util.EmptyStackException;
 import java.util.Stack;
 
+/**
+ * Parser class.
+ */
+
 public class Parser {
 
+    /**
+     * Parsing string to expression.
+     *
+     * @param toParse string to parse.
+     *
+     * @return parsed expression.
+     *
+     * @throws Exception if the brackets sequence is incorrect it throws exception.
+     */
     public Expression parseExpr(String toParse) throws Exception {
         toParse = toParse.replaceAll(" ", "");
 
@@ -20,7 +33,7 @@ public class Parser {
         char[] expr = brackets.toCharArray();*/
         char[] expr = toParse.toCharArray();
         int len = toParse.length();
-        if (len == 0){
+        if (len == 0) {
             throw new Exception("Empty expression");
         }
 
@@ -30,7 +43,7 @@ public class Parser {
         Stack<Integer> openStack = new Stack<>();
 
         for (int i = 0; i < len; i++) {
-            if (expr[i] == '('){
+            if (expr[i] == '(') {
                 openStack.push(i);
             }
 
@@ -47,11 +60,9 @@ public class Parser {
 
         int toDelete = 0;
         for (int i = 0; i < len; i++) {
-            if ((ptrs[i] == len - 1 - i) && (i < len - 1 - i)){
+            if ((ptrs[i] == len - 1 - i) && (i < len - 1 - i)) {
                 toDelete++;
-            }
-
-            else {
+            } else {
                 break;
             }
         }
@@ -62,9 +73,9 @@ public class Parser {
 
         int unclosed = 0;
         char c;
-        for (int i = 0; i < len; i++){
+        for (int i = 0; i < len; i++) {
             c = exprr[i];
-            switch(c) {
+            switch (c) {
                 case '(':
                     unclosed++;
                     break;
