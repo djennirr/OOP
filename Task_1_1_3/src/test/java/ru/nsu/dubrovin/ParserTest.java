@@ -11,7 +11,7 @@ class ParserTest {
     @Test
     void testVariable() throws Exception {
         assertEquals(parser.parseExpr("aaa").toString(), "aaa");
-        Exception e = assertThrows(Exception.class, () -> parser.parseExpr(""));
+        Exception e = assertThrows(ParserException.class, () -> parser.parseExpr(""));
         assertEquals("Empty expression", e.getMessage());
     }
 
@@ -32,7 +32,7 @@ class ParserTest {
         assertEquals(parser.parseExpr("(2 + 2) * 2").evaluate(""), 8);
         assertEquals(parser.parseExpr("(((((1)))))").evaluate(""), 1);
         assertEquals(parser.parseExpr("(90 / ((111 / 3) - 7)) * 2").evaluate(""), 6);
-        Exception e = assertThrows(Exception.class, () -> parser.parseExpr("((((("));
+        Exception e = assertThrows(ParserException.class, () -> parser.parseExpr("((((("));
         assertEquals("Inappropriate brackets sequence", e.getMessage());
     }
 }

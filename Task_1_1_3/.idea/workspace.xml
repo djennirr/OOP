@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00463e44-9026-417a-ac96-5de3ea3c6c6f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/ParserException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Div.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Div.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Expression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Expression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Mul.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Mul.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Number.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Number.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Sub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Sub.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Variable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Variable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/dubrovin/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/dubrovin/ParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/dubrovin/VariableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/dubrovin/VariableTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>

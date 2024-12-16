@@ -3,10 +3,6 @@ package ru.nsu.dubrovin;
 import java.util.EmptyStackException;
 import java.util.Stack;
 
-/**
- * Parser class.
- */
-
 public class Parser {
 
     /**
@@ -18,7 +14,7 @@ public class Parser {
      *
      * @throws Exception if the brackets sequence is incorrect it throws exception.
      */
-    public Expression parseExpr(String toParse) throws Exception {
+    public Expression parseExpr(String toParse) throws ParserException {
         toParse = toParse.replaceAll(" ", "");
 
         // We can have many outer brackets and we need to remove them all
@@ -34,7 +30,7 @@ public class Parser {
         char[] expr = toParse.toCharArray();
         int len = toParse.length();
         if (len == 0) {
-            throw new Exception("Empty expression");
+            throw new ParserException("Empty expression");
         }
 
 
@@ -51,7 +47,7 @@ public class Parser {
                 try {
                     tmp = openStack.pop();
                 } catch (EmptyStackException e) {
-                    throw new Exception("Inappropriate brackets sequence");
+                    throw new ParserException("Inappropriate brackets sequence");
                 }
                 // Now the cells with indices as opening brackets have ptrs to closing brackets
                 ptrs[tmp] = i;
@@ -59,7 +55,7 @@ public class Parser {
         }
 
         if (!openStack.empty()) {
-            throw new Exception("Inappropriate brackets sequence");
+            throw new ParserException("Inappropriate brackets sequence");
         }
 
         int toDelete = 0;

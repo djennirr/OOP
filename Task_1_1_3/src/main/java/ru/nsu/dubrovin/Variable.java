@@ -37,9 +37,9 @@ public class Variable extends Expression {
      * @throws Exception sometimes we cannot evaluate.
      */
     @Override
-    public double eval(HashMap<String, Double> evaluation) throws Exception {
+    public double eval(HashMap<String, Double> evaluation) throws VariableException {
         if (evaluation.get(name) == null) {
-            throw new Exception("Cannot evaluate");
+            throw new VariableException("Cannot evaluate");
         }
         return evaluation.get(name);
     }
