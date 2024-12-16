@@ -37,7 +37,7 @@ class ParserTest {
     }
 
     @Test
-    void TestBigExpressions() throws Exception {
+    void testBigExpressions() throws Exception {
         assertEquals(parser.parseExpr("((123 * 11) / 3) + (((111 / 3) - 7) * 2)").evaluate(""),
             511);
         assertEquals(parser.parseExpr("(9831 / 29) + ((18 * 126) - 4)").evaluate(""), 2603);

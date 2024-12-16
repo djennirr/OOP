@@ -3,6 +3,10 @@ package ru.nsu.dubrovin;
 import java.util.EmptyStackException;
 import java.util.Stack;
 
+/**
+ * Class for parser.
+ */
+
 public class Parser {
 
     /**

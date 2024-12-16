@@ -7,7 +7,8 @@
     <list default="true" id="00463e44-9026-417a-ac96-5de3ea3c6c6f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Variable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Variable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/ParserException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/ParserException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/VariableException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/VariableException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/dubrovin/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/dubrovin/ParserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
