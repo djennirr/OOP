@@ -12,7 +12,7 @@ public class Parser {
      *
      * @return parsed expression.
      *
-     * @throws Exception if the brackets sequence is incorrect it throws exception.
+     * @throws ParserException if the brackets sequence is incorrect it throws exception.
      */
     public Expression parseExpr(String toParse) throws ParserException {
         toParse = toParse.replaceAll(" ", "");

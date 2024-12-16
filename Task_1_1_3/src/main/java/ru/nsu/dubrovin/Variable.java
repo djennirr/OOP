@@ -34,7 +34,7 @@ public class Variable extends Expression {
      *
      * @return evaluated variable.
      *
-     * @throws Exception sometimes we cannot evaluate.
+     * @throws VariableException sometimes we cannot evaluate.
      */
     @Override
     public double eval(HashMap<String, Double> evaluation) throws VariableException {

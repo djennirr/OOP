@@ -35,4 +35,13 @@ class ParserTest {
         Exception e = assertThrows(ParserException.class, () -> parser.parseExpr("((((("));
         assertEquals("Inappropriate brackets sequence", e.getMessage());
     }
+
+    @Test
+    void TestBigExpressions() throws Exception {
+        assertEquals(parser.parseExpr("((123 * 11) / 3) + (((111 / 3) - 7) * 2)").evaluate(""),
+            511);
+        assertEquals(parser.parseExpr("(9831 / 29) + ((18 * 126) - 4)").evaluate(""), 2603);
+        assertEquals(parser.parseExpr("((2491 / 53) - (83891 * 34)) + (383 * 416)").evaluate(""),
+            -2692919);
+    }
 }
