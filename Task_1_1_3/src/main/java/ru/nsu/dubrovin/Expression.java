@@ -15,7 +15,7 @@ public abstract class Expression {
      *
      * @throws Exception sometimes we cannot evaluate.
      */
-    public abstract double eval (HashMap<String, Double> evaluation) throws Exception;
+    public abstract double eval(HashMap<String, Double> evaluation) throws Exception;
 
     /**
      * Converts expr to string.
