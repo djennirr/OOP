@@ -80,7 +80,7 @@ public class Sub extends Expression {
         }
         //We cannot do anything about case when first arg is 0.
 
-        if (firstArgSfied.toString().equals(secondArgSfied.toString())){
+        if (firstArgSfied.toString().equals(secondArgSfied.toString())) {
             return new Number(0);
         }
 

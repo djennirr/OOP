@@ -34,6 +34,5 @@ class DivTest {
     @Test
     void testSimplify() throws Exception {
         assertEquals(firstDiv.simplify().evaluate(""), 2);
-
     }
 }

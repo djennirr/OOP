@@ -32,7 +32,7 @@ public class Div extends Expression {
      */
     @Override
     public double eval(HashMap<String, Double> evaluation) throws Exception {
-        if (secondArg.eval(evaluation) == 0){
+        if (secondArg.eval(evaluation) == 0) {
             throw new ArithmeticException("Division by 0");
         }
         return firstArg.eval(evaluation) / secondArg.eval(evaluation);

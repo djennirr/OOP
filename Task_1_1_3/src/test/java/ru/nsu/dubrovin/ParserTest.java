@@ -5,8 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
-import java.lang.Number;
-
 class ParserTest {
     Parser parser = new Parser();
 
