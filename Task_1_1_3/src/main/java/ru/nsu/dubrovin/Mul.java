@@ -57,4 +57,47 @@ public class Mul extends Expression {
         return new Add(new Mul(firstArg.derivative(variable), secondArg),
             new Mul(firstArg, secondArg.derivative(variable)));
     }
+
+    /**
+     * Simplifies add expression.
+     *
+     * @return simplified add expression.
+     *
+     * @throws Exception in case we are calling evaluate, but it actually do not throw exception.
+     */
+    @Override
+    public Expression simplify() throws Exception {
+        Expression firstArgSfied = this.firstArg.simplify();
+        Expression secondArgSfied = this.secondArg.simplify();
+
+        if (firstArgSfied instanceof Number && secondArgSfied instanceof Number) {
+            return new Number((int) (firstArgSfied.evaluate("") * secondArgSfied.evaluate("")));
+        }
+
+        if (firstArgSfied instanceof Number) {
+            if (firstArgSfied.evaluate("") == 1) {
+                return secondArgSfied;
+            }
+        }
+
+        if (firstArgSfied instanceof Number) {
+            if (firstArgSfied.evaluate("") == 0) {
+                return new Number(0);
+            }
+        }
+
+        if (secondArgSfied instanceof  Number) {
+            if (secondArgSfied.evaluate("") == 1) {
+                return firstArgSfied;
+            }
+        }
+
+        if (secondArgSfied instanceof  Number) {
+            if (secondArgSfied.evaluate("") == 0) {
+                return new Number(0);
+            }
+        }
+
+        return new Mul(firstArgSfied, secondArgSfied);
+    }
 }

@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
+import java.lang.Number;
+
 class ParserTest {
     Parser parser = new Parser();
 
@@ -43,5 +45,11 @@ class ParserTest {
         assertEquals(parser.parseExpr("(9831 / 29) + ((18 * 126) - 4)").evaluate(""), 2603);
         assertEquals(parser.parseExpr("((2491 / 53) - (83891 * 34)) + (383 * 416)").evaluate(""),
             -2692919);
+    }
+
+    @Test
+    void testSimplify() throws Exception {
+        assertEquals(parser.parseExpr("((x * 0) + (a - a))").simplify().evaluate(""), 0);
+        assertEquals(parser.parseExpr("((a + 0) * (x - x)) + 3").simplify().evaluate(""), 3);
     }
 }

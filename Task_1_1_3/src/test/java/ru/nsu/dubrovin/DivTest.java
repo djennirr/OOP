@@ -30,4 +30,10 @@ class DivTest {
         assertEquals("(4/y)", secondDiv.toString());
         assertEquals("(x/y)", thirdDiv.toString());
     }
+
+    @Test
+    void testSimplify() throws Exception {
+        assertEquals(firstDiv.simplify().evaluate(""), 2);
+
+    }
 }

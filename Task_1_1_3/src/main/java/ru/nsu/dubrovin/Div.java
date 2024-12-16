@@ -32,6 +32,9 @@ public class Div extends Expression {
      */
     @Override
     public double eval(HashMap<String, Double> evaluation) throws Exception {
+        if (secondArg.eval(evaluation) == 0){
+            throw new ArithmeticException("Division by 0");
+        }
         return firstArg.eval(evaluation) / secondArg.eval(evaluation);
     }
 
@@ -53,9 +56,45 @@ public class Div extends Expression {
      * @return derivative.
      */
     @Override
-    //ДА КТО ВООБЩЕ ПРИДУМАЛ ТАКУЮ ПРОИЗВОДНУЮ РАЗНОСТИ НЕВОЗМОЖНО
     public Expression derivative(String variable) {
         return new Div(new Sub(new Mul(firstArg.derivative(variable), secondArg),
             new Mul(firstArg, secondArg.derivative(variable))), new Mul(secondArg, secondArg));
+    }
+
+    /**
+     * Simplifies add expression.
+     *
+     * @return simplified add expression.
+     *
+     * @throws Exception in case we are calling evaluate, but it actually do not throw exception.
+     */
+    @Override
+    public Expression simplify() throws Exception {
+        Expression firstArgSfied = this.firstArg.simplify();
+        Expression secondArgSfied = this.secondArg.simplify();
+
+        if (secondArgSfied instanceof Number) {
+            if (secondArgSfied.evaluate("") == 0) {
+                throw new ArithmeticException("Division by zero");
+            }
+        }
+
+        if (firstArgSfied instanceof Number && secondArgSfied instanceof Number) {
+            return new Number((int) (firstArgSfied.evaluate("") / secondArgSfied.evaluate("")));
+        }
+
+        if (firstArgSfied instanceof Number) {
+            if (firstArgSfied.evaluate("") == 0) {
+                return new Number(0);
+            }
+        }
+
+        if (secondArgSfied instanceof  Number) {
+            if (secondArgSfied.evaluate("") == 1) {
+                return firstArgSfied;
+            }
+        }
+
+        return new Div(firstArgSfied, secondArgSfied);
     }
 }

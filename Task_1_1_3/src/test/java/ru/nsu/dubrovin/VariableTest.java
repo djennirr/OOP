@@ -25,4 +25,9 @@ class VariableTest {
     void testToString() {
         assertEquals("myIQ", variable.toString());
     }
+
+    @Test
+    void testSimplify() {
+        assertEquals(variable.simplify(), variable);
+    }
 }

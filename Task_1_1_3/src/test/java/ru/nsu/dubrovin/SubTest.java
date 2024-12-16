@@ -30,4 +30,14 @@ class SubTest {
         assertEquals("(42-y)", secondDiff.toString());
         assertEquals("(x-y)", thirdDiff.toString());
     }
+
+    @Test
+    void testSimplify() throws Exception {
+        Sub same = new Sub(firstDiff, firstDiff);
+        assertEquals(same.simplify().evaluate(""), 0);
+        Sub sub1 = new Sub(firstDiff, new Number(0));
+        assertEquals(sub1.simplify().evaluate(""), -27);
+        Sub sub2 = new Sub(secondDiff, new Number(0));
+        assertEquals(sub2.simplify().toString(), secondDiff.toString());
+    }
 }

@@ -56,4 +56,35 @@ public class Add extends Expression {
     public Expression derivative(String variable) {
         return new Add(firstArg.derivative(variable), secondArg.derivative(variable));
     }
+
+    /**
+     * Simplifies add expression.
+     *
+     * @return simplified add expression.
+     *
+     * @throws Exception in case we are calling evaluate, but it actually do not throw exception.
+     */
+    @Override
+    public Expression simplify() throws Exception {
+        Expression firstArgSfied = this.firstArg.simplify();
+        Expression secondArgSfied = this.secondArg.simplify();
+
+        if (firstArgSfied instanceof Number && secondArgSfied instanceof Number) {
+            return new Number((int) (firstArgSfied.evaluate("") + secondArgSfied.evaluate("")));
+        }
+
+        if (firstArgSfied instanceof Number) {
+            if (firstArgSfied.evaluate("") == 0) {
+                return secondArgSfied;
+            }
+        }
+
+        if (secondArgSfied instanceof  Number) {
+            if (secondArgSfied.evaluate("") == 0) {
+                return firstArgSfied;
+            }
+        }
+
+        return new Add(firstArgSfied, secondArgSfied);
+    }
 }

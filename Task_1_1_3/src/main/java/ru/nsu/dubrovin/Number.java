@@ -50,4 +50,15 @@ public class Number extends Expression {
     public Expression derivative(String str) {
         return new Number(0);
     }
+
+    /**
+     * Simplifies number (not quite).
+     *
+     * @return the number itself as an object (not a double).
+     */
+    @Override
+    public Expression simplify() {
+        return this;
+        // we cannot simplify number until we are sure that subexpression contains numbers only
+    }
 }

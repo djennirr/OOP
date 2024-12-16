@@ -21,4 +21,9 @@ class NumberTest {
     void testToString() {
         assertEquals("123", number.toString());
     }
+
+    @Test
+    void testSimplify() {
+        assertEquals(number.simplify(), number);
+    }
 }

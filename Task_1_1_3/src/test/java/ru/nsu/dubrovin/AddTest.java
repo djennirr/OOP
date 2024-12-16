@@ -30,4 +30,15 @@ class AddTest {
         assertEquals("(42+y)", secondSum.toString());
         assertEquals("(x+y)", thirdSum.toString());
     }
+
+    @Test
+    void testSimplify() throws Exception {
+        assertEquals(firstSum.simplify().evaluate(""), new Number(111).evaluate(""));
+        assertEquals(secondSum.simplify().toString(), secondSum.toString());
+        assertEquals(thirdSum.simplify().toString(), thirdSum.toString());
+        Number n = new Number(0);
+        Variable v = new Variable("zero");
+        Add a = new Add(n, v);
+        assertEquals(a.simplify().toString(), v.toString());
+    }
 }

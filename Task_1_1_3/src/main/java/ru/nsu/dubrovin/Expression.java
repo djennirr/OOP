@@ -73,4 +73,11 @@ public abstract class Expression {
     public void print() {
         System.out.println(this.toString());
     }
+
+    /**
+     * Simplifies expression.
+     *
+     * @return simplified expression.
+     */
+    public abstract Expression simplify() throws Exception;
 }
