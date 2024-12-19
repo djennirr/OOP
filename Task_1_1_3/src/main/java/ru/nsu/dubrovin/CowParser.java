@@ -25,7 +25,7 @@ public class CowParser {
             throw new ParserException("Empty expression");
         }
 
-        ArrayList<String> rpn = infixToRPN(toParse);
+        ArrayList<String> rpn = infixToRevPolNot(toParse);
 
         return buildExpressionTree(rpn);
     }
@@ -39,7 +39,7 @@ public class CowParser {
      *
      * @throws ParserException in case we got inappropriate brackets sequence or operator.
      */
-    private ArrayList<String> infixToRPN(String expression) throws ParserException {
+    private ArrayList<String> infixToRevPolNot(String expression) throws ParserException {
         ArrayList<String> output = new ArrayList<>();
         ArrayDeque<Character> operators = new ArrayDeque<>();
 
@@ -49,7 +49,8 @@ public class CowParser {
 
             if (Character.isDigit(c)) {
                 StringBuilder number = new StringBuilder();
-                while (i < len && (Character.isDigit(expression.charAt(i)) || expression.charAt(i) == '.')) {
+                while (i < len && (Character.isDigit(expression.charAt(i)) ||
+                    expression.charAt(i) == '.')) {
                     number.append(expression.charAt(i));
                     i++;
                 }

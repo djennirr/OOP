@@ -75,7 +75,7 @@ public class Div extends Expression {
 
         if (secondArgSfied instanceof Number) {
             if (secondArgSfied.evaluate("") == 0) {
-                throw new ArithmeticException("Division by zero");
+                throw new ArithmeticException("Division by 0");
             }
         }
 

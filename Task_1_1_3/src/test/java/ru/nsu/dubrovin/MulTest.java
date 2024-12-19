@@ -30,4 +30,21 @@ class MulTest {
         assertEquals("(42*y)", secondMul.toString());
         assertEquals("(x*y)", thirdMul.toString());
     }
+
+    void testSimplify() throws Exception {
+        assertEquals(firstMul.simplify().evaluate(""), new Number(2898).evaluate(""));
+        assertEquals(secondMul.simplify().toString(), secondMul.toString());
+        assertEquals(thirdMul.simplify().toString(), thirdMul.toString());
+        Number zer = new Number(0);
+        Number one = new Number(1);
+        Variable var = new Variable("var");
+        Mul mz = new Mul(zer, var);
+        Mul mz2 = new Mul(var, zer);
+        Mul mo = new Mul(one, var);
+        Mul mo2 = new Mul (var, one);
+        assertEquals(mz.simplify().toString(), zer.toString());
+        assertEquals(mz2.simplify().toString(), zer.toString());
+        assertEquals(mo.simplify().toString(), var.toString());
+        assertEquals(mo2.simplify().toString(), var.toString());
+    }
 }

@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00463e44-9026-417a-ac96-5de3ea3c6c6f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/dubrovin/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/dubrovin/ParserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/CowParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/CowParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Div.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dubrovin/Div.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/dubrovin/DivTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/dubrovin/DivTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/dubrovin/MulTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/dubrovin/MulTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,34 +33,34 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2qHKxmSjeQxPhAuKHJfwLmaxxs6" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.AddTest.executor": "Run",
-    "Gradle.DivTest.executor": "Run",
-    "Gradle.MulTest.executor": "Run",
-    "Gradle.NumberTest.executor": "Run",
-    "Gradle.ParserFixTest.executor": "Run",
-    "Gradle.ParserFixTest.parserFixTest.executor": "Run",
-    "Gradle.ParserTest.executor": "Run",
-    "Gradle.SubTest.executor": "Run",
-    "Gradle.VariableTest.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "Task__1__1__3",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.AddTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.DivTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MulTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.NumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ParserFixTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ParserFixTest.parserFixTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ParserTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SubTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.VariableTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Task__1__1__3&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -64,7 +69,7 @@
       <recent name="ru.nsu.dubrovin" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.MulTest">
     <configuration name="MulTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -115,8 +120,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ParserFixTest.parserFixTest" />
         <item itemvalue="Gradle.MulTest" />
+        <item itemvalue="Gradle.ParserFixTest.parserFixTest" />
       </list>
     </recent_temporary>
   </component>
