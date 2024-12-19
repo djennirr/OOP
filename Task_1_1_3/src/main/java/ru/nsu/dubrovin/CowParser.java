@@ -49,8 +49,8 @@ public class CowParser {
 
             if (Character.isDigit(c)) {
                 StringBuilder number = new StringBuilder();
-                while (i < len && (Character.isDigit(expression.charAt(i)) ||
-                    expression.charAt(i) == '.')) {
+                while (i < len && (Character.isDigit(expression.charAt(i))
+                    || expression.charAt(i) == '.')) {
                     number.append(expression.charAt(i));
                     i++;
                 }

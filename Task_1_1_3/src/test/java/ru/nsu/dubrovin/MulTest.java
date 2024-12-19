@@ -39,12 +39,12 @@ class MulTest {
         Number one = new Number(1);
         Variable var = new Variable("var");
         Mul mz = new Mul(zer, var);
-        Mul mz2 = new Mul(var, zer);
-        Mul mo = new Mul(one, var);
-        Mul mo2 = new Mul (var, one);
         assertEquals(mz.simplify().toString(), zer.toString());
+        Mul mz2 = new Mul(var, zer);
         assertEquals(mz2.simplify().toString(), zer.toString());
+        Mul mo = new Mul(one, var);
         assertEquals(mo.simplify().toString(), var.toString());
+        Mul mo2 = new Mul(var, one);
         assertEquals(mo2.simplify().toString(), var.toString());
     }
 }
