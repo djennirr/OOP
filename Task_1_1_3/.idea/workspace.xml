@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00463e44-9026-417a-ac96-5de3ea3c6c6f" name="Changes" comment="" />
+    <list default="true" id="00463e44-9026-417a-ac96-5de3ea3c6c6f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/dubrovin/CowParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/dubrovin/CowParserTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
