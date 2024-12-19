@@ -35,25 +35,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.AddTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DivTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MulTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.NumberTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ParserFixTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ParserFixTest.parserFixTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ParserTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SubTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.VariableTest.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Task__1__1__3&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.AddTest.executor": "Run",
+    "Gradle.CowParserTest.executor": "Run",
+    "Gradle.DivTest.executor": "Run",
+    "Gradle.MulTest.executor": "Run",
+    "Gradle.NumberTest.executor": "Run",
+    "Gradle.ParserFixTest.executor": "Run",
+    "Gradle.ParserFixTest.parserFixTest.executor": "Run",
+    "Gradle.ParserTest.executor": "Run",
+    "Gradle.SubTest.executor": "Run",
+    "Gradle.VariableTest.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "Task__1__1__3",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -62,7 +63,7 @@
       <recent name="ru.nsu.dubrovin" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.MulTest">
+  <component name="RunManager">
     <configuration name="MulTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
