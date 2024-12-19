@@ -49,5 +49,6 @@ class ParserTest {
     void testSimplify() throws Exception {
         assertEquals(parser.parseExpr("((x * 0) + (a - a))").simplify().evaluate(""), 0);
         assertEquals(parser.parseExpr("((a + 0) * (x - x)) + 3").simplify().evaluate(""), 3);
+        assertEquals(parser.parseExpr("(2 + 2 * 2) * (2 * 2 + 2)").simplify().evaluate(""), 36);
     }
 }
