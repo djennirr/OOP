@@ -55,7 +55,12 @@ public class Text extends Element {
         }
 
         public TextBuilder addContent(String content) {
-            this.content = this.content + content;
+            if (this.content == null) {
+                this.content = content;
+            }
+            else {
+                this.content = this.content + content;
+            }
             return this;
         }
 

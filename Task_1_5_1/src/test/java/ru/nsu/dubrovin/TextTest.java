@@ -2,6 +2,8 @@ package ru.nsu.dubrovin;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,7 +12,20 @@ class TextTest {
     String resources = "src/test/resources/";
     @Test
     void test1() throws IOException {
-        Text text = Text.builder().setContent("Aboba").setBold(true).setItalic(true).build();
-        text.writeToFile(resources + "aboba.md");
+        File file = new File("textTest.md");
+        FileWriter writer = new FileWriter(file);
+        file.createNewFile();
+        Text boldItalic = Text.builder().setContent("Bold Italic").setBold(true).setItalic(true).build();
+        writer.append(boldItalic.toMarkDown());
+        writer.append("\n\n");
+        Text code = Text.builder().setContent("#include <stdio.h>").setCode(true).build();
+        writer.append(code.toMarkDown());
+        writer.append("\n\n");
+        Text lie = Text.builder().addContent("I ").addContent("Love ").addContent("python").setStrikeThrough(true).build();
+        writer.append(lie.toMarkDown());
+        writer.close();
+
+        assertEquals(FileComparator.getDiffLineNumber(new File("textTest.md"), new File(resources + "text.md")), 0);
+        file.delete();
     }
 }
