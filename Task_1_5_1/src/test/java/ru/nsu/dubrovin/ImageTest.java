@@ -15,15 +15,18 @@ class ImageTest {
         FileWriter writer = new FileWriter(file);
         file.createNewFile();
 
-        Image imageNoAltText = Image.builder().setLink("https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png").build();
+        Image imageNoAltText = Image.builder().setLink("https://github.com/adam-p/markdown-here" +
+            "/raw/master/src/common/images/icon48.png").build();
         writer.append(imageNoAltText.toMarkDown());
         writer.append("\n\n");
 
-        Image imageAltText = Image.builder().setLink("https://ic.pics.livejournal.com/chemodur/69177696/258350/258350_900.jpg").setAltText("whatever").build();
+        Image imageAltText = Image.builder().setLink("https://ic.pics.livejournal.com/chemodur" +
+            "/69177696/258350/258350_900.jpg").setAltText("whatever").build();
         writer.append(imageAltText.toMarkDown());
         writer.close();
 
-        assertEquals(FileComparator.getDiffLineNumber(new File("imageTest.md"), new File(getClass().getResource("/image.md").getPath())), 0);
+        assertEquals(FileComparator.getDiffLineNumber(new File("imageTest.md"),
+            new File(getClass().getResource("/image.md").getPath())), 0);
         file.delete();
     }
 
@@ -39,7 +42,8 @@ class ImageTest {
 
     @Test
     void testExceptions() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> Image.builder().build().toMarkDown());
+        Exception e = assertThrows(IllegalArgumentException.class, () -> Image.builder()
+            .build().toMarkDown());
         assertEquals("No link specified", e.getMessage());
     }
 }

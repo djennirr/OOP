@@ -23,7 +23,8 @@ class HeaderTest {
         writer.append(header2Level.toMarkDown());
         writer.close();
 
-        assertEquals(FileComparator.getDiffLineNumber(new File("headerTest.md"), new File(getClass().getResource("/header.md").getPath())), 0);
+        assertEquals(FileComparator.getDiffLineNumber(new File("headerTest.md"), new File(getClass()
+            .getResource("/header.md").getPath())), 0);
         file.delete();
     }
 
@@ -39,7 +40,8 @@ class HeaderTest {
 
     @Test
     void testExceptions() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> Header.builder().build().toMarkDown());
+        Exception e = assertThrows(IllegalArgumentException.class, () -> Header.builder()
+            .build().toMarkDown());
         assertEquals("No content specified", e.getMessage());
     }
 }

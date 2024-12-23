@@ -23,7 +23,8 @@ class LinkTest {
         writer.append(linkNamed.toMarkDown());
         writer.close();
 
-        assertEquals(FileComparator.getDiffLineNumber(new File("linkTest.md"), new File(getClass().getResource("/link.md").getPath())), 0);
+        assertEquals(FileComparator.getDiffLineNumber(new File("linkTest.md"),
+            new File(getClass().getResource("/link.md").getPath())), 0);
         file.delete();
     }
 
@@ -39,7 +40,8 @@ class LinkTest {
 
     @Test
     void testExceptions() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> Link.builder().build().toMarkDown());
+        Exception e = assertThrows(IllegalArgumentException.class, () -> Link.builder().build()
+            .toMarkDown());
         assertEquals("No link specified", e.getMessage());
     }
 }

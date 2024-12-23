@@ -15,7 +15,8 @@ class TextTest {
         FileWriter writer = new FileWriter(file);
         file.createNewFile();
 
-        Text boldItalic = Text.builder().setContent("Bold Italic").setBold(true).setItalic(true).build();
+        Text boldItalic = Text.builder().setContent("Bold Italic").setBold(true).setItalic(true)
+            .build();
         writer.append(boldItalic.toMarkDown());
         writer.append("\n\n");
 
@@ -23,11 +24,13 @@ class TextTest {
         writer.append(code.toMarkDown());
         writer.append("\n\n");
 
-        Text lie = Text.builder().addContent("I ").addContent("Love ").addContent("python").setStrikeThrough(true).build();
+        Text lie = Text.builder().addContent("I ").addContent("Love ").addContent("python")
+            .setStrikeThrough(true).build();
         writer.append(lie.toMarkDown());
         writer.close();
 
-        assertEquals(FileComparator.getDiffLineNumber(new File("textTest.md"), new File(getClass().getResource("/text.md").getPath())), 0);
+        assertEquals(FileComparator.getDiffLineNumber(new File("textTest.md"),
+            new File(getClass().getResource("/text.md").getPath())), 0);
         file.delete();
     }
 
@@ -43,7 +46,8 @@ class TextTest {
 
     @Test
     void testExceptions() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> Text.builder().build().toMarkDown());
+        Exception e = assertThrows(IllegalArgumentException.class, () -> Text.builder().build()
+            .toMarkDown());
         assertEquals("No content specified", e.getMessage());
     }
 }

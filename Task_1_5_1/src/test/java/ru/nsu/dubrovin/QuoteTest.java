@@ -23,7 +23,8 @@ class QuoteTest {
         writer.append(quote2.toMarkDown());
         writer.close();
 
-        assertEquals(FileComparator.getDiffLineNumber(new File("quoteTest.md"), new File(getClass().getResource("/quote.md").getPath())), 0);
+        assertEquals(FileComparator.getDiffLineNumber(new File("quoteTest.md"),
+            new File(getClass().getResource("/quote.md").getPath())), 0);
         file.delete();
     }
 
@@ -39,7 +40,8 @@ class QuoteTest {
 
     @Test
     void testExceptions() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> Quote.builder().build().toMarkDown());
+        Exception e = assertThrows(IllegalArgumentException.class, () -> Quote.builder()
+            .build().toMarkDown());
         assertEquals("No content specified", e.getMessage());
     }
 }
