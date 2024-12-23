@@ -21,6 +21,10 @@ public class Text extends Element {
     public String toMarkDown() {
         String text = this.content;
 
+        if (this.content.isEmpty()) {
+            throw new IllegalArgumentException("No content specified");
+        }
+
         if (this.isCode == true) {
             text = "`" + text + "`";
         }

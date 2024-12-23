@@ -15,9 +15,13 @@ public class Link extends Element {
         if (this.name == null) {
             text = "[" + this.link + "]()";
         }
-        else {
+        else if (this.link != null) {
             text = "[" + this.name + "](" + this.link + ")";
         }
+        else {
+            throw new IllegalArgumentException("No link specified");
+        }
+
         return text;
     }
 

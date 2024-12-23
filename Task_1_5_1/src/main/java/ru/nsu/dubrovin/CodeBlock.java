@@ -12,6 +12,9 @@ public class CodeBlock extends Element {
     @Override
     public String toMarkDown() {
         String text = this.content;
+        if (text.isEmpty()) {
+            throw new IllegalArgumentException("No content specified");
+        }
         if (this.language == null) {
             text = "```\n" + text + "\n```";
         }

@@ -9,8 +9,11 @@ public class Quote extends Element {
 
     @Override
     public String toMarkDown() {
-        String text = this.content;
-        text = "> " + text;
+        if (this.content.isEmpty()) {
+            throw new IllegalArgumentException("No content specified");
+        }
+
+        String text = "> " + this.content;
         return text;
     }
 

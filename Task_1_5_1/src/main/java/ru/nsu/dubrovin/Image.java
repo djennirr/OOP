@@ -15,9 +15,13 @@ public class Image extends Element {
         if (this.altText == null) {
             text = "![](" + this.link + ")";
         }
-        else {
+        else if (this.link != null) {
             text = "![" + this.altText + "](" + this.link + ")";
         }
+        else {
+            throw new IllegalArgumentException("No link specified");
+        }
+
         return text;
     }
 

@@ -38,7 +38,12 @@ public class MarkDownList extends Element {
                 throw new IllegalArgumentException("No list type specified");
             }
 
-            stringBuilder.append(this.lines.get(i));
+            String line = this.lines.get(i);
+            if (line.isEmpty()) {
+                throw new IllegalArgumentException("No content specified on line " + i);
+            }
+
+            stringBuilder.append(line);
             stringBuilder.append("\n");
         }
 

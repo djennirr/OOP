@@ -11,8 +11,11 @@ public class Header extends Element {
 
     @Override
     public String toMarkDown() {
-        String text = this.content;
-        text = "#".repeat(level) + " " + text;
+        if (this.content.isEmpty()) {
+            throw new IllegalArgumentException("No content specified");
+        }
+
+        String text = "#".repeat(level) + " " + this.content;
         return text;
     }
 
