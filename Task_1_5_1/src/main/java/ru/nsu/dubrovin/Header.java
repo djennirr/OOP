@@ -1,6 +1,6 @@
 package ru.nsu.dubrovin;
 
-public class Header extends Element implements MarkDownListable{
+public class Header extends Element {
     private String content;
     private int level;
 
