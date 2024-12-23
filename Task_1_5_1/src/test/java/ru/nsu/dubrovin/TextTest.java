@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TextTest {
     @Test
@@ -26,5 +26,14 @@ class TextTest {
 
         assertEquals(FileComparator.getDiffLineNumber(new File("textTest.md"), new File(getClass().getResource("/text.md").getPath())), 0);
         file.delete();
+    }
+
+    @Test
+    void testEquals() {
+        Text text1 = Text.builder().setContent("aa").setItalic(true).build();
+        Text text2 = Text.builder().setContent("aa").setItalic(true).build();
+        Text text3 = Text.builder().setContent("aa").build();
+        assertEquals(text1.equals(text2), true);
+        assertEquals(text1.equals(text3), false);
     }
 }

@@ -43,4 +43,13 @@ public class Link extends Element {
             return new Link(this);
         }
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Link)) {
+            return false;
+        }
+        Link other = (Link) o;
+        return link.equals(other.link) && name.equals(other.name);
+    }
 }

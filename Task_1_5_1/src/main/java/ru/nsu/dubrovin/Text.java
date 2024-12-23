@@ -1,5 +1,7 @@
 package ru.nsu.dubrovin;
 
+import java.util.Objects;
+
 public class Text extends Element {
     private String content;
     private boolean isItalic;
@@ -87,5 +89,18 @@ public class Text extends Element {
         public Text build() {
             return new Text(this);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Text)) {
+            return false;
+        }
+        Text other = (Text) o;
+        return content.equals(other.content)
+                && (isBold == other.isBold)
+                && (isItalic == other.isItalic)
+                && (isStrikeThrough == other.isStrikeThrough)
+                && (isCode == other.isCode);
     }
 }

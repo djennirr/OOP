@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class LinkTest {
     @Test
@@ -23,5 +23,14 @@ class LinkTest {
 
         assertEquals(FileComparator.getDiffLineNumber(new File("linkTest.md"), new File(getClass().getResource("/link.md").getPath())), 0);
         file.delete();
+    }
+
+    @Test
+    void testEquals() {
+        Link link1 = Link.builder().setName("aa").setLink("bb").build();
+        Link link2 = Link.builder().setName("aa").setLink("bb").build();
+        Link link3 = Link.builder().setName("aa").build();
+        assertEquals(link1.equals(link2), true);
+        assertEquals(link1.equals(link3), false);
     }
 }

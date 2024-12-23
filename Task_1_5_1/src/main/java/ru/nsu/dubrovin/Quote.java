@@ -31,4 +31,13 @@ public class Quote extends Element {
             return new Quote(this);
         }
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Quote)) {
+            return false;
+        }
+        Quote other = (Quote) o;
+        return content.equals(other.content);
+    }
 }
