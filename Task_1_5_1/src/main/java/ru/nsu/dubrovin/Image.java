@@ -1,14 +1,27 @@
 package ru.nsu.dubrovin;
 
+/**
+ * Class for images.
+ */
 public class Image extends Element {
     private String link;
     private String altText;
 
+    /**
+     * Constructor.
+     *
+     * @param imageBuilder builder.
+     */
     private Image(ImageBuilder imageBuilder) {
         this.link = imageBuilder.link;
         this.altText = imageBuilder.altText;
     }
 
+    /**
+     * Serializes object into string.
+     *
+     * @return md string.
+     */
     @Override
     public String toMarkDown() {
         if (this.link == null) {
@@ -26,10 +39,18 @@ public class Image extends Element {
         return text;
     }
 
+    /**
+     * Initializing building.
+     *
+     * @return builder.
+     */
     public static ImageBuilder builder() {
         return new ImageBuilder();
     }
 
+    /**
+     * Builder class.
+     */
     public static class ImageBuilder {
         private String link;
         private String altText;
@@ -49,6 +70,13 @@ public class Image extends Element {
         }
     }
 
+    /**
+     * Equals operation for images.
+     *
+     * @param o object to compare.
+     *
+     * @return whether objects are equal ore not.
+     */
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Image)) {

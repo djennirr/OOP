@@ -1,14 +1,27 @@
 package ru.nsu.dubrovin;
 
+/**
+ * Class for headers.
+ */
 public class Header extends Element {
     private String content;
     private int level;
 
+    /**
+     * Constructor.
+     *
+     * @param headerBuilder builder.
+     */
     private Header(HeaderBuilder headerBuilder) {
         this.content = headerBuilder.content;
         this.level = headerBuilder.level;
     }
 
+    /**
+     * Serializes object into string.
+     *
+     * @return md string.
+     */
     @Override
     public String toMarkDown() {
         if (this.content == null) {
@@ -19,10 +32,18 @@ public class Header extends Element {
         return text;
     }
 
+    /**
+     * Initializing building.
+     *
+     * @return builder.
+     */
     public static HeaderBuilder builder() {
         return new HeaderBuilder();
     }
 
+    /**
+     * Builder class.
+     */
     public static class HeaderBuilder {
         private String content;
         private int level;
@@ -45,6 +66,13 @@ public class Header extends Element {
         }
     }
 
+    /**
+     * Equals operation for headers.
+     *
+     * @param o object to compare.
+     *
+     * @return whether objects are equal ore not.
+     */
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Header)) {

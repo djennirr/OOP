@@ -1,14 +1,27 @@
 package ru.nsu.dubrovin;
 
+/**
+ * Class for links.
+ */
 public class Link extends Element {
     private String link;
     private String name;
 
+    /**
+     * Constructor.
+     *
+     * @param linkBuilder builder.
+     */
     private Link(LinkBuilder linkBuilder) {
         this.link = linkBuilder.link;
         this.name = linkBuilder.name;
     }
 
+    /**
+     * Serializes object into string.
+     *
+     * @return md string.
+     */
     @Override
     public String toMarkDown() {
         if (this.link == null) {
@@ -26,10 +39,18 @@ public class Link extends Element {
         return text;
     }
 
+    /**
+     * Initializing building.
+     *
+     * @return builder.
+     */
     public static LinkBuilder builder() {
         return new LinkBuilder();
     }
 
+    /**
+     * Builder class.
+     */
     public static class LinkBuilder {
         private String link;
         private String name;
@@ -49,6 +70,13 @@ public class Link extends Element {
         }
     }
 
+    /**
+     * Equals operation for links.
+     *
+     * @param o object to compare.
+     *
+     * @return whether objects are equal ore not.
+     */
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Link)) {

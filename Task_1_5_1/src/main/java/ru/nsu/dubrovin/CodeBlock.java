@@ -1,14 +1,27 @@
 package ru.nsu.dubrovin;
 
+/**
+ * Class for codeblocks.
+ */
 public class CodeBlock extends Element {
     private String content;
     private String language;
 
-    private CodeBlock(CodeBlockBuilder headerBuilder) {
-        this.content = headerBuilder.content;
-        this.language = headerBuilder.language;
+    /**
+     * Constructor.
+     *
+     * @param codeBlockBuilder builder.
+     */
+    private CodeBlock(CodeBlockBuilder codeBlockBuilder) {
+        this.content = codeBlockBuilder.content;
+        this.language = codeBlockBuilder.language;
     }
 
+    /**
+     * Serializes object into string.
+     *
+     * @return md string.
+     */
     @Override
     public String toMarkDown() {
         String text = this.content;
@@ -24,10 +37,18 @@ public class CodeBlock extends Element {
         return text;
     }
 
+    /**
+     * Initializing building.
+     *
+     * @return builder.
+     */
     public static CodeBlockBuilder builder() {
         return new CodeBlockBuilder();
     }
 
+    /**
+     * Builder class.
+     */
     public static class CodeBlockBuilder {
         private String content;
         private String language;
@@ -47,6 +68,13 @@ public class CodeBlock extends Element {
         }
     }
 
+    /**
+     * Equals operation for codeblocks.
+     *
+     * @param o object to compare.
+     *
+     * @return whether objects are equal ore not.
+     */
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof CodeBlock)) {

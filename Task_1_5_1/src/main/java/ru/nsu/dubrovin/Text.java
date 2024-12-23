@@ -1,7 +1,8 @@
 package ru.nsu.dubrovin;
 
-import java.util.Objects;
-
+/**
+ * Class for texts.
+ */
 public class Text extends Element {
     private String content;
     private boolean isItalic;
@@ -9,6 +10,11 @@ public class Text extends Element {
     private boolean isStrikeThrough;
     private boolean isCode;
 
+    /**
+     * Constructor.
+     *
+     * @param textBuilder builder.
+     */
     private Text(TextBuilder textBuilder) {
         this.content = textBuilder.content;
         this.isItalic = textBuilder.isItalic;
@@ -17,6 +23,11 @@ public class Text extends Element {
         this.isCode = textBuilder.isCode;
     }
 
+    /**
+     * Serializes object into string.
+     *
+     * @return md string.
+     */
     @Override
     public String toMarkDown() {
         String text = this.content;
@@ -44,10 +55,18 @@ public class Text extends Element {
         return text;
     }
 
+    /**
+     * Initializing building.
+     *
+     * @return builder.
+     */
     public static TextBuilder builder() {
         return new TextBuilder();
     }
 
+    /**
+     * Builder class.
+     */
     public static class TextBuilder {
         private String content;
         private boolean isItalic;
@@ -95,6 +114,13 @@ public class Text extends Element {
         }
     }
 
+    /**
+     * Equals operation for texts.
+     *
+     * @param o object to compare.
+     *
+     * @return whether objects are equal ore not.
+     */
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Text)) {

@@ -2,6 +2,9 @@ package ru.nsu.dubrovin;
 
 import java.util.ArrayList;
 
+/**
+ * Class for mdlists.
+ */
 public class MarkDownList extends Element {
     private ArrayList<String> lines;
     private ListType listType;
@@ -11,11 +14,21 @@ public class MarkDownList extends Element {
         NUMERATED
     }
 
+    /**
+     * Constructor.
+     *
+     * @param markDownListBuilder builder.
+     */
     private MarkDownList(MarkDownListBuilder markDownListBuilder) {
         this.lines = markDownListBuilder.lines;
         this.listType = markDownListBuilder.listType;
     }
 
+    /**
+     * Serializes object into string.
+     *
+     * @return md string.
+     */
     @Override
     public String toMarkDown() {
 
@@ -50,10 +63,18 @@ public class MarkDownList extends Element {
         return stringBuilder.toString();
     }
 
+    /**
+     * Initializing building.
+     *
+     * @return builder.
+     */
     public static MarkDownListBuilder builder() {
         return new MarkDownListBuilder();
     }
 
+    /**
+     * Builder class.
+     */
     public static class MarkDownListBuilder {
         private ArrayList<String> lines = new ArrayList<>();
         private ListType listType;
@@ -77,6 +98,13 @@ public class MarkDownList extends Element {
         }
     }
 
+    /**
+     * Equals operation for mdlists.
+     *
+     * @param o object to compare.
+     *
+     * @return whether objects are equal ore not.
+     */
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof MarkDownList)) {

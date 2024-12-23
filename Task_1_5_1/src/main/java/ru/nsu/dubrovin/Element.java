@@ -4,8 +4,16 @@ package ru.nsu.dubrovin;
 import java.io.FileWriter;
 import java.io.IOException;*/
 
+/**
+ * Abstract class for markdown elements.
+ */
 public abstract class Element {
 
+    /**
+     * Serializes object into string.
+     *
+     * @return md string.
+     */
     public abstract String toMarkDown();
 
     /*public void writeToFile(String fileName) throws IOException {
