@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class MarkDownList extends Element {
     private ArrayList<String> lines;
     private ListType listType;
+
     public enum ListType {
         USUAL,
         NUMERATED
@@ -14,7 +15,6 @@ public class MarkDownList extends Element {
         this.lines = markDownListBuilder.lines;
         this.listType = markDownListBuilder.listType;
     }
-
 
     @Override
     public String toMarkDown() {
@@ -62,5 +62,41 @@ public class MarkDownList extends Element {
         public MarkDownList build() {
             return new MarkDownList(this);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof MarkDownList)) {
+            return false;
+        }
+        MarkDownList other = (MarkDownList) o;
+
+        boolean linesCompare = true;
+        for (int i = 0; i < this.lines.size(); i++) {
+            String line1 = this.lines.get(i);
+            String line2 = this.lines.get(i);
+
+            if (line1 == null) {
+
+                if (line2 != null) {
+                    linesCompare = false;
+                    break;
+                }
+
+                else {
+                    break;
+                }
+            }
+
+            else {
+
+                if (line1 != line2) {
+                    linesCompare = false;
+                    break;
+                }
+            }
+        }
+
+        return linesCompare && (this.listType == other.listType);
     }
 }

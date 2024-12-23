@@ -13,9 +13,11 @@ class QuoteTest {
         File file = new File("quoteTest.md");
         FileWriter writer = new FileWriter(file);
         file.createNewFile();
+
         Quote quote = Quote.builder().setContent("Some quote").build();
         writer.append(quote.toMarkDown());
         writer.append("\n\n");
+
         Quote quote2 = Quote.builder().setContent("Yet another clever quote").build();
         writer.append(quote2.toMarkDown());
         writer.close();
@@ -26,10 +28,11 @@ class QuoteTest {
 
     @Test
     void testEquals() {
-        Link link1 = Link.builder().setName("aa").setLink("bb").build();
-        Link link2 = Link.builder().setName("aa").setName("bb").build();
-        Link link3 = Link.builder().setName("aa").build();
-        assertEquals(link1.equals(link2), true);
-        assertEquals(link1.equals(link3), false);
+        Quote quote1 = Quote.builder().setContent("aa").build();
+        Quote quote2 = Quote.builder().setContent("aa").build();
+        Quote quote3 = Quote.builder().setContent("aaaa").build();
+
+        assertEquals(quote1.equals(quote2), true);
+        assertEquals(quote1.equals(quote3), false);
     }
 }

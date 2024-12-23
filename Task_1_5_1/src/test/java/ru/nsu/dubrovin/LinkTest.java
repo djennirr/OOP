@@ -14,10 +14,12 @@ class LinkTest {
         File file = new File("linkTest.md");
         FileWriter writer = new FileWriter(file);
         file.createNewFile();
+
         Link linkNoName = Link.builder().setLink("https://google.com").build();
         writer.append(linkNoName.toMarkDown());
-        Link linkNamed = Link.builder().setLink("https://google.com").setName("Google").build();
         writer.append("\n\n");
+
+        Link linkNamed = Link.builder().setLink("https://google.com").setName("Google").build();
         writer.append(linkNamed.toMarkDown());
         writer.close();
 
@@ -30,6 +32,7 @@ class LinkTest {
         Link link1 = Link.builder().setName("aa").setLink("bb").build();
         Link link2 = Link.builder().setName("aa").setLink("bb").build();
         Link link3 = Link.builder().setName("aa").build();
+
         assertEquals(link1.equals(link2), true);
         assertEquals(link1.equals(link3), false);
     }

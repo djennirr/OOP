@@ -41,4 +41,13 @@ public class Header extends Element {
             return new Header(this);
         }
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Header)) {
+            return false;
+        }
+        Header other = (Header) o;
+        return (this.content == other.content) && (this.level == other.level);
+    }
 }

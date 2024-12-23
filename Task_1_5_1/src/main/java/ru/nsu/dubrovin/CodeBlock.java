@@ -43,4 +43,13 @@ public class CodeBlock extends Element {
             return new CodeBlock(this);
         }
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof CodeBlock)) {
+            return false;
+        }
+        CodeBlock other = (CodeBlock) o;
+        return (this.content == other.content) && (this.language == other.language);
+    }
 }

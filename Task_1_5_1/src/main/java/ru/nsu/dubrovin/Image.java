@@ -43,4 +43,13 @@ public class Image extends Element {
             return new Image(this);
         }
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Image)) {
+            return false;
+        }
+        Image other = (Image) o;
+        return (this.link == other.link) && (this.altText == other.altText);
+    }
 }

@@ -38,6 +38,6 @@ public class Quote extends Element {
             return false;
         }
         Quote other = (Quote) o;
-        return content.equals(other.content);
+        return this.content == other.content;
     }
 }

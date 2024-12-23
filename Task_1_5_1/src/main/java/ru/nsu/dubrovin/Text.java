@@ -97,10 +97,8 @@ public class Text extends Element {
             return false;
         }
         Text other = (Text) o;
-        return content.equals(other.content)
-                && (isBold == other.isBold)
-                && (isItalic == other.isItalic)
-                && (isStrikeThrough == other.isStrikeThrough)
-                && (isCode == other.isCode);
+        return (this.content == other.content) && (this.isBold == other.isBold)
+            && (this.isItalic == other.isItalic) && (this.isStrikeThrough == other.isStrikeThrough)
+            && (this.isCode == other.isCode);
     }
 }

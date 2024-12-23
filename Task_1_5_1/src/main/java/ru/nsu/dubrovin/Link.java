@@ -50,6 +50,6 @@ public class Link extends Element {
             return false;
         }
         Link other = (Link) o;
-        return link.equals(other.link) && name.equals(other.name);
+        return (this.link == other.link) && (this.name == other.name);
     }
 }
