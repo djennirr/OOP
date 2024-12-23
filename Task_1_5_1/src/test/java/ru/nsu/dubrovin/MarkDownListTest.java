@@ -27,8 +27,8 @@ class MarkDownListTest {
 
         Text boldItalic = Text.builder().setContent("Bold Italic").setBold(true).setItalic(true)
             .build();
-        Image image = Image.builder().setLink("https://github.com/adam-p/markdown-here/raw/" +
-            "master/src/common/images/icon48.png").build();
+        Image image = Image.builder().setLink("https://github.com/adam-p/markdown-here/raw/"
+            + "master/src/common/images/icon48.png").build();
         MarkDownList markDownList3 = MarkDownList.builder().addLine(boldItalic.toMarkDown())
             .addLine(image.toMarkDown()).setType(MarkDownList.ListType.USUAL).build();
         writer.append(markDownList3.toMarkDown());

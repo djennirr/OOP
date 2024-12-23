@@ -15,13 +15,13 @@ class CodeBlockTest {
         FileWriter writer = new FileWriter(file);
         file.createNewFile();
 
-        CodeBlock codeBlockHighlighted = CodeBlock.builder().setContent("#include <stdio.h>\n" +
-            "#include <stdlib.h>\n").setLanguage("C").build();
+        CodeBlock codeBlockHighlighted = CodeBlock.builder().setContent("#include <stdio.h>\n"
+            + "#include <stdlib.h>\n").setLanguage("C").build();
         writer.append(codeBlockHighlighted.toMarkDown());
         writer.append("\n\n");
 
-        CodeBlock codeBlockUnHighLighted = CodeBlock.builder().setContent("There is no language " +
-            "specified\nSo, whatever").build();
+        CodeBlock codeBlockUnHighLighted = CodeBlock.builder().setContent("There is no language "
+            + "specified\nSo, whatever").build();
         writer.append(codeBlockUnHighLighted.toMarkDown());
         writer.close();
 
