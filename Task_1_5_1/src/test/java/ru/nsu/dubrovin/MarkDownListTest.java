@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class MarkDownListTest {
     @Test
     void testCodeBlock() throws Exception {
-        File file = new File("markDownTableTest.md");
+        File file = new File("markDownListTest.md");
         FileWriter writer = new FileWriter(file);
         file.createNewFile();
 
@@ -28,7 +28,7 @@ class MarkDownListTest {
         writer.append(markDownList3.toMarkDown());
         writer.close();
 
-        assertEquals(FileComparator.getDiffLineNumber(new File("markDownTableTest.md"), new File(getClass().getResource("/markDownTable.md").getPath())), 0);
+        assertEquals(FileComparator.getDiffLineNumber(new File("markDownListTest.md"), new File(getClass().getResource("/markDownList.md").getPath())), 0);
         file.delete();
     }
 
@@ -40,5 +40,14 @@ class MarkDownListTest {
 
         assertEquals(markDownList1.equals(markDownList2), true);
         assertEquals(markDownList1.equals(markDownList3), false);
+    }
+
+    @Test
+    void testExceptions() {
+        Exception e = assertThrows(IllegalArgumentException.class, () -> MarkDownList.builder().build().toMarkDown());
+        assertEquals("No lines specified", e.getMessage());
+
+        Exception e2 = assertThrows(IllegalArgumentException.class, () -> MarkDownList.builder().addLine("a").addLine("b").build().toMarkDown());
+        assertEquals("No list type specified", e2.getMessage());
     }
 }

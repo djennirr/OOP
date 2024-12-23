@@ -11,7 +11,7 @@ public class Header extends Element {
 
     @Override
     public String toMarkDown() {
-        if (this.content.isEmpty()) {
+        if (this.content == null) {
             throw new IllegalArgumentException("No content specified");
         }
 

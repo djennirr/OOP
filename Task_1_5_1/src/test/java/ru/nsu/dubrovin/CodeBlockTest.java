@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileWriter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CodeBlockTest {
     @Test
@@ -34,5 +35,11 @@ class CodeBlockTest {
 
         assertEquals(codeBlock1.equals(codeBlock2), true);
         assertEquals(codeBlock1.equals(codeBlock3), false);
+    }
+
+    @Test
+    void testExceptions() {
+        Exception e = assertThrows(IllegalArgumentException.class, () -> CodeBlock.builder().build().toMarkDown());
+        assertEquals("No content specified", e.getMessage());
     }
 }

@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class TextTest {
     @Test
@@ -39,5 +40,11 @@ class TextTest {
 
         assertEquals(text1.equals(text2), true);
         assertEquals(text1.equals(text3), false);
+    }
+
+    @Test
+    void testExceptions() {
+        Exception e = assertThrows(IllegalArgumentException.class, () -> Text.builder().build().toMarkDown());
+        assertEquals("No content specified", e.getMessage());
     }
 }

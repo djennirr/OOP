@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileWriter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class HeaderTest {
     @Test
@@ -34,5 +35,11 @@ class HeaderTest {
 
         assertEquals(header1.equals(header2), true);
         assertEquals(header1.equals(header3), false);
+    }
+
+    @Test
+    void testExceptions() {
+        Exception e = assertThrows(IllegalArgumentException.class, () -> Header.builder().build().toMarkDown());
+        assertEquals("No content specified", e.getMessage());
     }
 }

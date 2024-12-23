@@ -11,15 +11,16 @@ public class Link extends Element {
 
     @Override
     public String toMarkDown() {
+        if (this.link == null) {
+            throw new IllegalArgumentException("No link specified");
+        }
+
         String text = "";
         if (this.name == null) {
             text = "[" + this.link + "]()";
         }
-        else if (this.link != null) {
-            text = "[" + this.name + "](" + this.link + ")";
-        }
         else {
-            throw new IllegalArgumentException("No link specified");
+            text = "[" + this.name + "](" + this.link + ")";
         }
 
         return text;

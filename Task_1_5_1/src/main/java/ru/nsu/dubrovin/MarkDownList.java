@@ -39,7 +39,7 @@ public class MarkDownList extends Element {
             }
 
             String line = this.lines.get(i);
-            if (line.isEmpty()) {
+            if (line == null) {
                 throw new IllegalArgumentException("No content specified on line " + i);
             }
 

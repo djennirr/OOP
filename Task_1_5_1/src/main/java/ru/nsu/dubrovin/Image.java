@@ -11,15 +11,16 @@ public class Image extends Element {
 
     @Override
     public String toMarkDown() {
+        if (this.link == null) {
+            throw new IllegalArgumentException("No link specified");
+        }
+
         String text = "";
         if (this.altText == null) {
             text = "![](" + this.link + ")";
         }
-        else if (this.link != null) {
-            text = "![" + this.altText + "](" + this.link + ")";
-        }
         else {
-            throw new IllegalArgumentException("No link specified");
+            text = "![" + this.altText + "](" + this.link + ")";
         }
 
         return text;

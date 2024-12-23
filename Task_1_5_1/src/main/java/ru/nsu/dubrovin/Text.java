@@ -21,7 +21,7 @@ public class Text extends Element {
     public String toMarkDown() {
         String text = this.content;
 
-        if (this.content.isEmpty()) {
+        if (text == null) {
             throw new IllegalArgumentException("No content specified");
         }
 

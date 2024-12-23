@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ImageTest {
     @Test
@@ -35,5 +36,11 @@ class ImageTest {
 
         assertEquals(image1.equals(image2), true);
         assertEquals(image1.equals(image3), false);
+    }
+
+    @Test
+    void testExceptions() {
+        Exception e = assertThrows(IllegalArgumentException.class, () -> Image.builder().build().toMarkDown());
+        assertEquals("No link specified", e.getMessage());
     }
 }

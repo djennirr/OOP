@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class LinkTest {
     @Test
@@ -35,5 +36,11 @@ class LinkTest {
 
         assertEquals(link1.equals(link2), true);
         assertEquals(link1.equals(link3), false);
+    }
+
+    @Test
+    void testExceptions() {
+        Exception e = assertThrows(IllegalArgumentException.class, () -> Link.builder().build().toMarkDown());
+        assertEquals("No link specified", e.getMessage());
     }
 }
