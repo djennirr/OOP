@@ -18,23 +18,31 @@ public class MarkDownList extends Element {
 
     @Override
     public String toMarkDown() {
-        String text = "";
+
+        if (this.lines.isEmpty()) {
+            throw new IllegalArgumentException("No lines specified");
+        }
+
+        StringBuilder stringBuilder = new StringBuilder();
+
         for (int i = 0; i < this.lines.size(); i++) {
             if (this.listType == ListType.USUAL) {
-                text = text + "* ";
+                stringBuilder.append("* ");
             }
 
             else if (this.listType == ListType.NUMERATED) {
-                text = text + "0. ";
+                stringBuilder.append("0. ");
             }
 
             else {
                 throw new IllegalArgumentException("No list type specified");
             }
 
-            text = text + this.lines.get(i) + "\n";
+            stringBuilder.append(this.lines.get(i));
+            stringBuilder.append("\n");
         }
-        return text;
+
+        return stringBuilder.toString();
     }
 
     public static MarkDownListBuilder builder() {
