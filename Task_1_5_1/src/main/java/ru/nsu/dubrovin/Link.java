@@ -31,8 +31,7 @@ public class Link extends Element {
         String text = "";
         if (this.name == null) {
             text = "[" + this.link + "]()";
-        }
-        else {
+        } else {
             text = "[" + this.name + "](" + this.link + ")";
         }
 

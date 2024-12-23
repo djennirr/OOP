@@ -28,12 +28,13 @@ public class CodeBlock extends Element {
         if (text == null) {
             throw new IllegalArgumentException("No content specified");
         }
+
         if (this.language == null) {
             text = "```\n" + text + "\n```";
-        }
-        else {
+        } else {
             text = "```" + this.language + "\n" + text + "```\n";
         }
+
         return text;
     }
 

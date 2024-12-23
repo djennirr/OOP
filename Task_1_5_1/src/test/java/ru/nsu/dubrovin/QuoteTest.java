@@ -1,16 +1,16 @@
 package ru.nsu.dubrovin;
 
-import org.junit.jupiter.api.Test;
-
-import java.io.File;
-import java.io.FileWriter;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.jupiter.api.Test;
+
 class QuoteTest {
     @Test
-    void testQuote() throws Exception {
+    void testQuote() throws IOException {
         File file = new File("quoteTest.md");
         FileWriter writer = new FileWriter(file);
         file.createNewFile();

@@ -1,15 +1,16 @@
 package ru.nsu.dubrovin;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.File;
 import java.io.FileWriter;
-
-import static org.junit.jupiter.api.Assertions.*;
+import java.io.IOException;
+import org.junit.jupiter.api.Test;
 
 class MarkDownListTest {
     @Test
-    void testCodeBlock() throws Exception {
+    void testCodeBlock() throws IOException {
         File file = new File("markDownListTest.md");
         FileWriter writer = new FileWriter(file);
         file.createNewFile();

@@ -31,8 +31,7 @@ public class Image extends Element {
         String text = "";
         if (this.altText == null) {
             text = "![](" + this.link + ")";
-        }
-        else {
+        } else {
             text = "![" + this.altText + "](" + this.link + ")";
         }
 

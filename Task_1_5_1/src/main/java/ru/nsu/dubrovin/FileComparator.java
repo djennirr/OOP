@@ -24,7 +24,8 @@ public class FileComparator {
         BufferedReader bf1 = new BufferedReader(new FileReader(file1));
         BufferedReader bf2 = new BufferedReader(new FileReader(file2));
         long lineNumber = 1;
-        String line1 = "", line2 = "";
+        String line1 = "";
+        String line2 = "";
         while ((line1 = bf1.readLine()) != null) {
             line2 = bf2.readLine();
             if (line2 == null || !line1.equals(line2)) {
@@ -36,8 +37,7 @@ public class FileComparator {
         }
         if (bf2.readLine() == null) {
             return 0;
-        }
-        else {
+        } else {
             return lineNumber;
         }
     }

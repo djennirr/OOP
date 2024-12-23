@@ -9,6 +9,9 @@ public class MarkDownList extends Element {
     private ArrayList<String> lines;
     private ListType listType;
 
+    /**
+     * Enum for type of the list.
+     */
     public enum ListType {
         USUAL,
         NUMERATED
@@ -41,13 +44,9 @@ public class MarkDownList extends Element {
         for (int i = 0; i < this.lines.size(); i++) {
             if (this.listType == ListType.USUAL) {
                 stringBuilder.append("* ");
-            }
-
-            else if (this.listType == ListType.NUMERATED) {
+            } else if (this.listType == ListType.NUMERATED) {
                 stringBuilder.append("0. ");
-            }
-
-            else {
+            } else {
                 throw new IllegalArgumentException("No list type specified");
             }
 
@@ -141,14 +140,11 @@ public class MarkDownList extends Element {
                 if (line2 != null) {
                     linesCompare = false;
                     break;
-                }
-
-                else {
+                } else {
                     break;
                 }
-            }
 
-            else {
+            } else {
 
                 if (line1 != line2) {
                     linesCompare = false;

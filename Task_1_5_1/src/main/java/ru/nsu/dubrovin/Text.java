@@ -96,8 +96,7 @@ public class Text extends Element {
         public TextBuilder addContent(String content) {
             if (this.content == null) {
                 this.content = content;
-            }
-            else {
+            } else {
                 this.content = this.content + content;
             }
             return this;
