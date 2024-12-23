@@ -14,11 +14,11 @@ class ImageTest {
         File file = new File("imageTest.md");
         FileWriter writer = new FileWriter(file);
         file.createNewFile();
-        Image image = Image.builder().setLink("https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png").build();
-        writer.append(image.toMarkDown());
-        Image image2 = Image.builder().setLink("https://ic.pics.livejournal.com/chemodur/69177696/258350/258350_900.jpg").setAltText("whatever").build();
+        Image imageNoAltText = Image.builder().setLink("https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png").build();
+        writer.append(imageNoAltText.toMarkDown());
+        Image imageAltText = Image.builder().setLink("https://ic.pics.livejournal.com/chemodur/69177696/258350/258350_900.jpg").setAltText("whatever").build();
         writer.append("\n\n");
-        writer.append(image2.toMarkDown());
+        writer.append(imageAltText.toMarkDown());
         writer.close();
 
         assertEquals(FileComparator.getDiffLineNumber(new File("imageTest.md"), new File(getClass().getResource("/image.md").getPath())), 0);
