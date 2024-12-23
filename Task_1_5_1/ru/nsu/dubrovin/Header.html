@@ -78,6 +78,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Header</span>
 <span class="extends-implements">extends <a href="Element.html" title="class in ru.nsu.dubrovin">Element</a></span></div>
+<div class="block">Class for headers.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -92,7 +93,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static class&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="Header.HeaderBuilder.html" class="type-name-link" title="class in ru.nsu.dubrovin">Header.HeaderBuilder</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Builder class.</div>
+</div>
 </div>
 </section>
 </li>
@@ -109,13 +112,19 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Header.HeaderBuilder.html" title="class in ru.nsu.dubrovin">Header.HeaderBuilder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#builder()" class="member-name-link">builder</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Initializing building.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Equals operation for headers.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toMarkDown()" class="member-name-link">toMarkDown</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Serializes object into string.</div>
+</div>
 </div>
 </div>
 </div>
@@ -137,9 +146,12 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="toMarkDown()">
 <h3>toMarkDown</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toMarkDown</span>()</div>
+<div class="block">Serializes object into string.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Element.html#toMarkDown()">toMarkDown</a></code>&nbsp;in class&nbsp;<code><a href="Element.html" title="class in ru.nsu.dubrovin">Element</a></code></dd>
+<dt>Returns:</dt>
+<dd>md string.</dd>
 </dl>
 </section>
 </li>
@@ -147,15 +159,25 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="builder()">
 <h3>builder</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Header.HeaderBuilder.html" title="class in ru.nsu.dubrovin">Header.HeaderBuilder</a></span>&nbsp;<span class="element-name">builder</span>()</div>
+<div class="block">Initializing building.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>builder.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="equals(java.lang.Object)">
 <h3>equals</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</span></div>
+<div class="block">Equals operation for headers.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>o</code> - object to compare.</dd>
+<dt>Returns:</dt>
+<dd>whether objects are equal ore not.</dd>
 </dl>
 </section>
 </li>
