@@ -1,6 +1,6 @@
 package ru.nsu.dubrovin;
 
-public class Text extends Element {
+public class Text extends Element implements MarkDownListable {
     private String content;
     private boolean isItalic;
     private boolean isBold;

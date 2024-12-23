@@ -1,6 +1,6 @@
 package ru.nsu.dubrovin;
 
-public class Link extends Element{
+public class Link extends Element implements MarkDownListable{
     private String link;
     private String name;
 

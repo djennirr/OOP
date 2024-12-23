@@ -1,6 +1,6 @@
 package ru.nsu.dubrovin;
 
-public class CodeBlock extends Element{
+public class CodeBlock extends Element {
     private String content;
     private String language;
 

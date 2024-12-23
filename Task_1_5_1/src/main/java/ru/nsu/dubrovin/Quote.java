@@ -1,6 +1,6 @@
 package ru.nsu.dubrovin;
 
-public class Quote extends Element{
+public class Quote extends Element implements MarkDownListable {
     private String content;
 
     private Quote(QuoteBuilder quoteBuilder) {

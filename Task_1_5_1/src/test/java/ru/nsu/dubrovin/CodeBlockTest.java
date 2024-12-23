@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CodeBlockTest {
     String resources = "src/test/resources/";
     @Test
-    void test1() throws Exception {
+    void testCodeBlock() throws Exception {
         File file = new File("codeBlockTest.md");
         FileWriter writer = new FileWriter(file);
         file.createNewFile();
@@ -21,7 +21,7 @@ class CodeBlockTest {
         writer.append(codeBlock2.toMarkDown());
         writer.close();
 
-        assertEquals(FileComparator.getDiffLineNumber(new File("codeBlockTest.md"), new File(resources + "codeBlock.md")), 0);
+        assertEquals(FileComparator.getDiffLineNumber(new File("codeBlockTest.md"), new File(getClass().getResource("/codeBlock.md").getPath())), 0);
         file.delete();
     }
 }

@@ -8,9 +8,8 @@ import java.io.FileWriter;
 import static org.junit.jupiter.api.Assertions.*;
 
 class QuoteTest {
-    String resources = "src/test/resources/";
     @Test
-    void test1() throws Exception {
+    void testQuote() throws Exception {
         File file = new File("quoteTest.md");
         FileWriter writer = new FileWriter(file);
         file.createNewFile();
@@ -21,7 +20,7 @@ class QuoteTest {
         writer.append(quote2.toMarkDown());
         writer.close();
 
-        assertEquals(FileComparator.getDiffLineNumber(new File("quoteTest.md"), new File(resources + "quote.md")), 0);
+        assertEquals(FileComparator.getDiffLineNumber(new File("quoteTest.md"), new File(getClass().getResource("/quote.md").getPath())), 0);
         file.delete();
     }
 }

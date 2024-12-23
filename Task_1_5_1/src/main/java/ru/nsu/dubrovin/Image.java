@@ -1,6 +1,6 @@
 package ru.nsu.dubrovin;
 
-public class Image extends Element{
+public class Image extends Element implements MarkDownListable {
     private String link;
     private String altText;
 

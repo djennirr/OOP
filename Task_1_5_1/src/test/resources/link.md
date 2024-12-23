@@ -1,3 +1,3 @@
-[google.com]()
+[https://google.com]()
 
-[Google](google.com)
+[Google](https://google.com)

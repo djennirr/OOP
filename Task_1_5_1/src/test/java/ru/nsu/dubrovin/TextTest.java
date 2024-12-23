@@ -9,9 +9,8 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TextTest {
-    String resources = "src/test/resources/";
     @Test
-    void test1() throws IOException {
+    void testText() throws IOException {
         File file = new File("textTest.md");
         FileWriter writer = new FileWriter(file);
         file.createNewFile();
@@ -25,7 +24,7 @@ class TextTest {
         writer.append(lie.toMarkDown());
         writer.close();
 
-        assertEquals(FileComparator.getDiffLineNumber(new File("textTest.md"), new File(resources + "text.md")), 0);
+        assertEquals(FileComparator.getDiffLineNumber(new File("textTest.md"), new File(getClass().getResource("/text.md").getPath())), 0);
         file.delete();
     }
 }

@@ -11,8 +11,8 @@ public class FileComparator {
         while ((line1 = bf1.readLine()) != null) {
             line2 = bf2.readLine();
             if (line2 == null || !line1.equals(line2)) {
-                System.out.println(line1);
-                System.out.println(line2);
+                System.err.println(line1);
+                System.err.println(line2);
                 return lineNumber;
             }
             lineNumber++;

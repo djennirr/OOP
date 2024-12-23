@@ -1,6 +1,6 @@
 package ru.nsu.dubrovin;
 
-public class Header extends Element{
+public class Header extends Element implements MarkDownListable{
     private String content;
     private int level;
 
@@ -29,9 +29,9 @@ public class Header extends Element{
             return this;
         }
 
-        public HeaderBuilder setLevel(int level) throws Exception {
+        public HeaderBuilder setLevel(int level) throws IllegalArgumentException {
             if (level < 1 || level > 6) {
-                throw new Exception("Inappropriate header level");
+                throw new IllegalArgumentException("Inappropriate header level: " + level);
             }
             this.level = level;
             return this;
