@@ -40,8 +40,8 @@ class LinkTest {
 
     @Test
     void testExceptions() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> Link.builder().build()
+        Exception empty = assertThrows(IllegalArgumentException.class, () -> Link.builder().build()
             .toMarkDown());
-        assertEquals("No link specified", e.getMessage());
+        assertEquals("No link specified", empty.getMessage());
     }
 }

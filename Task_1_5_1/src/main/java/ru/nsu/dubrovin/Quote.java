@@ -4,7 +4,7 @@ package ru.nsu.dubrovin;
  * Class for quotes.
  */
 public class Quote extends Element {
-    private String content;
+    private final String content;
 
     /**
      * Constructor.

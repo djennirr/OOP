@@ -4,8 +4,8 @@ package ru.nsu.dubrovin;
  * Class for headers.
  */
 public class Header extends Element {
-    private String content;
-    private int level;
+    private final String content;
+    private final int level;
 
     /**
      * Constructor.

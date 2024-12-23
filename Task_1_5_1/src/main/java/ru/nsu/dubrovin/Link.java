@@ -4,8 +4,8 @@ package ru.nsu.dubrovin;
  * Class for links.
  */
 public class Link extends Element {
-    private String link;
-    private String name;
+    private final String link;
+    private final String name;
 
     /**
      * Constructor.

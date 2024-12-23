@@ -4,8 +4,8 @@ package ru.nsu.dubrovin;
  * Class for images.
  */
 public class Image extends Element {
-    private String link;
-    private String altText;
+    private final String link;
+    private final String altText;
 
     /**
      * Constructor.

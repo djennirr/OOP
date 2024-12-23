@@ -4,8 +4,8 @@ package ru.nsu.dubrovin;
  * Class for codeblocks.
  */
 public class CodeBlock extends Element {
-    private String content;
-    private String language;
+    private final String content;
+    private final String language;
 
     /**
      * Constructor.

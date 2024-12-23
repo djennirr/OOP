@@ -42,8 +42,8 @@ class ImageTest {
 
     @Test
     void testExceptions() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> Image.builder()
+        Exception empty = assertThrows(IllegalArgumentException.class, () -> Image.builder()
             .build().toMarkDown());
-        assertEquals("No link specified", e.getMessage());
+        assertEquals("No link specified", empty.getMessage());
     }
 }

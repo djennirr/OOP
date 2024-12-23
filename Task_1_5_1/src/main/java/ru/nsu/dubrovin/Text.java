@@ -4,11 +4,11 @@ package ru.nsu.dubrovin;
  * Class for texts.
  */
 public class Text extends Element {
-    private String content;
-    private boolean isItalic;
-    private boolean isBold;
-    private boolean isStrikeThrough;
-    private boolean isCode;
+    private final String content;
+    private final boolean isItalic;
+    private final boolean isBold;
+    private final boolean isStrikeThrough;
+    private final boolean isCode;
 
     /**
      * Constructor.

@@ -40,8 +40,12 @@ class HeaderTest {
 
     @Test
     void testExceptions() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> Header.builder()
+        Exception empty = assertThrows(IllegalArgumentException.class, () -> Header.builder()
             .build().toMarkDown());
-        assertEquals("No content specified", e.getMessage());
+        assertEquals("No content specified", empty.getMessage());
+
+        Exception level = assertThrows(IllegalArgumentException.class, () -> Header.builder()
+                .setLevel(7).build().toMarkDown());
+        assertEquals("Inappropriate header level: 7", level.getMessage());
     }
 }

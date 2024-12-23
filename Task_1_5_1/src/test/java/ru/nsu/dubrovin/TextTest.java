@@ -46,8 +46,8 @@ class TextTest {
 
     @Test
     void testExceptions() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> Text.builder().build()
+        Exception empty = assertThrows(IllegalArgumentException.class, () -> Text.builder().build()
             .toMarkDown());
-        assertEquals("No content specified", e.getMessage());
+        assertEquals("No content specified", empty.getMessage());
     }
 }

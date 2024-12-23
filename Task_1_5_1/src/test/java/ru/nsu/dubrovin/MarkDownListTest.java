@@ -54,12 +54,12 @@ class MarkDownListTest {
 
     @Test
     void testExceptions() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> MarkDownList.builder()
+        Exception empty = assertThrows(IllegalArgumentException.class, () -> MarkDownList.builder()
             .build().toMarkDown());
-        assertEquals("No lines specified", e.getMessage());
+        assertEquals("No lines specified", empty.getMessage());
 
-        Exception e2 = assertThrows(IllegalArgumentException.class, () -> MarkDownList.builder()
+        Exception noType = assertThrows(IllegalArgumentException.class, () -> MarkDownList.builder()
             .addLine("a").addLine("b").build().toMarkDown());
-        assertEquals("No list type specified", e2.getMessage());
+        assertEquals("No list type specified", noType.getMessage());
     }
 }

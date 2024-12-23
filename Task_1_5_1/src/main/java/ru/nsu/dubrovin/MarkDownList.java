@@ -6,8 +6,8 @@ import java.util.ArrayList;
  * Class for mdlists.
  */
 public class MarkDownList extends Element {
-    private ArrayList<String> lines;
-    private ListType listType;
+    private final ArrayList<String> lines;
+    private final ListType listType;
 
     /**
      * Enum for type of the list.
