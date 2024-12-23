@@ -48,11 +48,25 @@ public class Header extends Element {
         private String content;
         private int level;
 
+        /**
+         * Sets content.
+         *
+         * @param content content to set.
+         *
+         * @return builder.
+         */
         public HeaderBuilder setContent(String content) {
             this.content = content;
             return this;
         }
 
+        /**
+         * Sets level parameter.
+         *
+         * @param level parameter to set.
+         *
+         * @return builder.
+         */
         public HeaderBuilder setLevel(int level) throws IllegalArgumentException {
             if (level < 1 || level > 6) {
                 throw new IllegalArgumentException("Inappropriate header level: " + level);
@@ -61,6 +75,11 @@ public class Header extends Element {
             return this;
         }
 
+        /**
+         * Building object.
+         *
+         * @return Header.
+         */
         public Header build() {
             return new Header(this);
         }

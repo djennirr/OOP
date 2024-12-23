@@ -80,6 +80,13 @@ public class MarkDownList extends Element {
         private ListType listType;
 
 
+        /**
+         * Adds line.
+         *
+         * @param line line to add.
+         *
+         * @return builder.
+         */
         public MarkDownListBuilder addLine(String line) {
             if (line.isEmpty()) {
                 throw new IllegalArgumentException("Empty line");
@@ -88,11 +95,23 @@ public class MarkDownList extends Element {
             return this;
         }
 
+        /**
+         * Sets listType parameter.
+         *
+         * @param listType parameter to set.
+         *
+         * @return builder.
+         */
         public MarkDownListBuilder setType(ListType listType) {
             this.listType = listType;
             return this;
         }
 
+        /**
+         * Building object.
+         *
+         * @return MarkDownList.
+         */
         public MarkDownList build() {
             return new MarkDownList(this);
         }

@@ -53,16 +53,35 @@ public class CodeBlock extends Element {
         private String content;
         private String language;
 
+        /**
+         * Sets content.
+         *
+         * @param content content to set.
+         *
+         * @return builder.
+         */
         public CodeBlockBuilder setContent(String content) {
             this.content = content;
             return this;
         }
 
+        /**
+         * Sets language.
+         *
+         * @param language language to set.
+         *
+         * @return builder.
+         */
         public CodeBlockBuilder setLanguage(String language) {
             this.language = language;
             return this;
         }
 
+        /**
+         * Building object.
+         *
+         * @return CodeBlock.
+         */
         public CodeBlock build() {
             return new CodeBlock(this);
         }

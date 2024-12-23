@@ -55,16 +55,35 @@ public class Link extends Element {
         private String link;
         private String name;
 
+        /**
+         * Sets link.
+         *
+         * @param link link to set.
+         *
+         * @return builder.
+         */
         public LinkBuilder setLink(String link) {
             this.link = link;
             return this;
         }
 
+        /**
+         * Sets name.
+         *
+         * @param name name to set.
+         *
+         * @return builder.
+         */
         public LinkBuilder setName(String name) {
             this.name = name;
             return this;
         }
 
+        /**
+         * Building object.
+         *
+         * @return Link.
+         */
         public Link build() {
             return new Link(this);
         }

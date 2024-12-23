@@ -55,16 +55,35 @@ public class Image extends Element {
         private String link;
         private String altText;
 
+        /**
+         * Sets link.
+         *
+         * @param link link to set.
+         *
+         * @return builder.
+         */
         public ImageBuilder setLink(String link) {
             this.link = link;
             return this;
         }
 
+        /**
+         * Sets altText.
+         *
+         * @param altText parameter to set.
+         *
+         * @return builder.
+         */
         public ImageBuilder setAltText(String altText) {
             this.altText = altText;
             return this;
         }
 
+        /**
+         * Building object.
+         *
+         * @return Image.
+         */
         public Image build() {
             return new Image(this);
         }

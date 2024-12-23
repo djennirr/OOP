@@ -46,11 +46,23 @@ public class Quote extends Element {
         private String content;
         private int level;
 
+        /**
+         * Sets content.
+         *
+         * @param content content to set.
+         *
+         * @return builder.
+         */
         public QuoteBuilder setContent(String content) {
             this.content = content;
             return this;
         }
 
+        /**
+         * Building object.
+         *
+         * @return Quote.
+         */
         public Quote build() {
             return new Quote(this);
         }

@@ -74,11 +74,25 @@ public class Text extends Element {
         private boolean isStrikeThrough;
         private boolean isCode;
 
+        /**
+         * Sets content.
+         *
+         * @param content content to set.
+         *
+         * @return builder.
+         */
         public TextBuilder setContent(String content) {
             this.content = content;
             return this;
         }
 
+        /**
+         * Adds content.
+         *
+         * @param content content to add.
+         *
+         * @return builder.
+         */
         public TextBuilder addContent(String content) {
             if (this.content == null) {
                 this.content = content;
@@ -89,26 +103,59 @@ public class Text extends Element {
             return this;
         }
 
+        /**
+         * Sets isItalic parameter.
+         *
+         * @param isItalic parameter to set.
+         *
+         * @return builder.
+         */
         public TextBuilder setItalic(boolean isItalic) {
             this.isItalic = isItalic;
             return this;
         }
 
+        /**
+         * Sets isBold parameter.
+         *
+         * @param isBold parameter to set.
+         *
+         * @return builder.
+         */
         public TextBuilder setBold(boolean isBold) {
             this.isBold = isBold;
             return this;
         }
 
+        /**
+         * Sets isStrikeThrough parameter.
+         *
+         * @param isStrikeThrough parameter to set.
+         *
+         * @return builder.
+         */
         public TextBuilder setStrikeThrough(boolean isStrikeThrough) {
             this.isStrikeThrough = isStrikeThrough;
             return this;
         }
 
+        /**
+         * Sets isCode parameter.
+         *
+         * @param isCode parameter to set.
+         *
+         * @return builder.
+         */
         public TextBuilder setCode(boolean isCode) {
             this.isCode = isCode;
             return this;
         }
 
+        /**
+         * Building object.
+         *
+         * @return Text.
+         */
         public Text build() {
             return new Text(this);
         }
