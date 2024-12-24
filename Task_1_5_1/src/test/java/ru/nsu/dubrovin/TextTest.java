@@ -31,8 +31,7 @@ class TextTest {
 
             assertEquals(FileComparator.getDiffLineNumber(new File("textTest.md"),
                     new File(getClass().getResource("/text.md").getPath())), 0);
-        }
-        finally {
+        } finally {
             file.delete();
         }
     }
