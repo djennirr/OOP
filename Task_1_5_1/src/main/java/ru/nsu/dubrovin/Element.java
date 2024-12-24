@@ -11,5 +11,5 @@ public abstract class Element {
      * @return md string.
      */
     public abstract String toMarkDown();
-    
+
 }

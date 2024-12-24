@@ -12,20 +12,23 @@ class HeaderTest {
     @Test
     void testHeader() throws IOException {
         File file = new File("headerTest.md");
-        FileWriter writer = new FileWriter(file);
-        file.createNewFile();
+        try (FileWriter writer = new FileWriter(file);) {
+            file.createNewFile();
 
-        Header header3Level = Header.builder().setContent("Some text").setLevel(3).build();
-        writer.append(header3Level.toMarkDown());
-        writer.append("\n\n");
+            Header header3Level = Header.builder().setContent("Some text").setLevel(3).build();
+            writer.append(header3Level.toMarkDown());
+            writer.append("\n\n");
 
-        Header header2Level = Header.builder().setContent("Some smaller text").setLevel(6).build();
-        writer.append(header2Level.toMarkDown());
-        writer.close();
+            Header header2Level = Header.builder().setContent("Some smaller text").setLevel(6)
+                .build();
+            writer.append(header2Level.toMarkDown());
+            writer.close();
 
-        assertEquals(FileComparator.getDiffLineNumber(new File("headerTest.md"), new File(getClass()
-            .getResource("/header.md").getPath())), 0);
-        file.delete();
+            assertEquals(FileComparator.getDiffLineNumber(new File("headerTest.md"),
+                new File(getClass().getResource("/header.md").getPath())), 0);
+        } finally {
+            file.delete();
+        }
     }
 
     @Test

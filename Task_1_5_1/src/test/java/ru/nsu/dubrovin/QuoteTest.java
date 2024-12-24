@@ -12,20 +12,22 @@ class QuoteTest {
     @Test
     void testQuote() throws IOException {
         File file = new File("quoteTest.md");
-        FileWriter writer = new FileWriter(file);
-        file.createNewFile();
+        try (FileWriter writer = new FileWriter(file);) {
+            file.createNewFile();
 
-        Quote quote = Quote.builder().setContent("Some quote").build();
-        writer.append(quote.toMarkDown());
-        writer.append("\n\n");
+            Quote quote = Quote.builder().setContent("Some quote").build();
+            writer.append(quote.toMarkDown());
+            writer.append("\n\n");
 
-        Quote quote2 = Quote.builder().setContent("Yet another clever quote").build();
-        writer.append(quote2.toMarkDown());
-        writer.close();
+            Quote quote2 = Quote.builder().setContent("Yet another clever quote").build();
+            writer.append(quote2.toMarkDown());
+            writer.close();
 
-        assertEquals(FileComparator.getDiffLineNumber(new File("quoteTest.md"),
-            new File(getClass().getResource("/quote.md").getPath())), 0);
-        file.delete();
+            assertEquals(FileComparator.getDiffLineNumber(new File("quoteTest.md"),
+                new File(getClass().getResource("/quote.md").getPath())), 0);
+        } finally {
+            file.delete();
+        }
     }
 
     @Test
