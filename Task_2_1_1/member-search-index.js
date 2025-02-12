@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"ru.nsu.dubrovin","c":"PrimeCheck","l":"isPrime(int)"},{"p":"ru.nsu.dubrovin","c":"PrimeCheck","l":"PrimeCheck()","u":"%3Cinit%3E()"}];updateSearchResults();
