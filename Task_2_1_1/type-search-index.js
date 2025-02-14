@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.nsu.dubrovin","l":"PrimeCheck"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.nsu.dubrovin","l":"ParNonPrimeSearch"},{"p":"ru.nsu.dubrovin","l":"PrimeCheck"},{"p":"ru.nsu.dubrovin","l":"PrimeSearchable"},{"p":"ru.nsu.dubrovin","l":"SeqNonPrimeSearch"}];updateSearchResults();
