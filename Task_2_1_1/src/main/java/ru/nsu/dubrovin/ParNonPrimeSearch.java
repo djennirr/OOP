@@ -71,7 +71,22 @@ public class ParNonPrimeSearch implements PrimeSearchable {
                 remain--;
             }
 
-            threads[i] = new Thread(new Task(chunkStart, chunkEnd));
+            int finalChunkStart = chunkStart;
+            int finalChunkEnd = chunkEnd;
+            threads[i] = new Thread(new Runnable() {
+                final int chunkS = finalChunkStart;
+                final int chunkE = finalChunkEnd;
+
+                @Override
+                public void run() {
+                    for (int i = chunkS; i < chunkE; i++) {
+                        if (PrimeCheck.isPrime(arr[i]) == false) {
+                            flag.set(true);
+                        }
+                    }
+                }
+            });
+
             chunkStart = chunkEnd;
         }
 
