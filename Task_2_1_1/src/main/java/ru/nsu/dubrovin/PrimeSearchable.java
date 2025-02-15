@@ -1,7 +1,7 @@
 package ru.nsu.dubrovin;
 
 /**
- * Interface for classes to search for not prime numbers
+ * Interface for classes to search for not prime numbers.
  */
 public interface PrimeSearchable {
 

@@ -1,7 +1,7 @@
 package ru.nsu.dubrovin;
 
 /**
- * Class for primarity checking
+ * Class for primarity checking.
  */
 
 public class PrimeCheck {

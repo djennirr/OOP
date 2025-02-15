@@ -16,7 +16,7 @@ public class ParNonPrimeSearch implements PrimeSearchable {
      *
      * @param threadsNumber number of threads user want to have.
      */
-    public ParNonPrimeSearch (int threadsNumber) {
+    public ParNonPrimeSearch(int threadsNumber) {
         this.threadsNumber = threadsNumber;
     }
 
