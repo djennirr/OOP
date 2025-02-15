@@ -20,25 +20,6 @@ public class ParNonPrimeSearch implements PrimeSearchable {
         this.threadsNumber = threadsNumber;
     }
 
-    private class Task implements Runnable {
-        private final int chunkStart;
-        private final int chunkEnd;
-
-        private Task(int chunkStart, int chunkEnd) {
-            this.chunkStart = chunkStart;
-            this.chunkEnd = chunkEnd;
-        }
-
-        @Override
-        public void run() {
-            for (int i = chunkStart; i < chunkEnd; i++) {
-                if (PrimeCheck.isPrime(arr[i]) == false) {
-                    flag.set(true);
-                }
-            }
-        }
-    }
-
     @Override
     public boolean containNotPrime(int[] arr) throws InterruptedException {
         this.arr = arr;
