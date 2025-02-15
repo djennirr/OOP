@@ -9,6 +9,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class ParNonPrimeSearch implements PrimeSearchable {
     private final int threadsNumber;
     private AtomicBoolean flag = new AtomicBoolean(false);
+    private int[] arr;
 
     /**
      * Constructor.
@@ -20,16 +21,18 @@ public class ParNonPrimeSearch implements PrimeSearchable {
     }
 
     private class Task implements Runnable {
-        private final int[] chunk;
+        private final int chunkStart;
+        private final int chunkEnd;
 
-        private Task(int[] chunk) {
-            this.chunk = chunk;
+        private Task(int chunkStart, int chunkEnd) {
+            this.chunkStart = chunkStart;
+            this.chunkEnd = chunkEnd;
         }
 
         @Override
         public void run() {
-            for (int i = 0; i < chunk.length; i++) {
-                if (PrimeCheck.isPrime(chunk[i]) == false) {
+            for (int i = chunkStart; i < chunkEnd; i++) {
+                if (PrimeCheck.isPrime(arr[i]) == false) {
                     flag.set(true);
                 }
             }
@@ -38,6 +41,8 @@ public class ParNonPrimeSearch implements PrimeSearchable {
 
     @Override
     public boolean containNotPrime(int[] arr) throws InterruptedException {
+        this.arr = arr;
+
         if (arr.length == 0) {
             return false;
         }
@@ -58,7 +63,6 @@ public class ParNonPrimeSearch implements PrimeSearchable {
         int remain = arr.length - chunkSize * realThreadsNumber;
         int chunkStart = 0;
         int chunkEnd;
-        int[] chunk;
 
         for (int i = 0; i < realThreadsNumber; i++) {
             chunkEnd = chunkStart + chunkSize;
@@ -67,15 +71,18 @@ public class ParNonPrimeSearch implements PrimeSearchable {
                 remain--;
             }
 
-            chunk = Arrays.copyOfRange(arr, chunkStart, chunkEnd);
+            threads[i] = new Thread(new Task(chunkStart, chunkEnd));
             chunkStart = chunkEnd;
-            threads[i] = new Thread(new Task(chunk));
         }
 
         for (int i = 0; i < realThreadsNumber; i++) {
             threads[i].start();
+        }
+
+        for (int i = 0; i < realThreadsNumber; i++) {
             threads[i].join();
         }
+
         return flag.get();
     }
 }
